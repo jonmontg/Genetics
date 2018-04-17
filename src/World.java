@@ -2,6 +2,8 @@
  * Author: Jonathan Montgomery
  * Date: April 5, 2018
  *
+ * Updated by Michael DeReu 4/17
+ *
  * World holds a population and an environment. The population competes and
  * reproduces within the world depending on the pressures of the environment.
  */
@@ -19,6 +21,9 @@ public class World {
      *
      */
     public void advance() {
+        int distance = 0;
+
+        return distance;
 
     }
 
@@ -28,6 +33,7 @@ public class World {
      * the desired task.
      */
     public int fitness(Individual i) {
+
         return 0;
     }
 }

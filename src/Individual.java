@@ -15,4 +15,6 @@ public class Individual {
     private String crossover(Individual p, Individual q) {
         return null;
     }
+
 }
+
