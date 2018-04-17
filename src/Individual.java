@@ -1,3 +1,8 @@
+import java.util.concurrent.ThreadLocalRandom;
+
+/**
+ *
+ */
 public class Individual {
 
     private String chromosome;
@@ -12,7 +17,17 @@ public class Individual {
         this.chromosome = chromosome;
     }
 
-    private String crossover(Individual p, Individual q) {
+    /**
+     * TODO: create a crossing over algorithm that combines parent chromosomes into a child
+     */
+    public String crossover(Individual p, Individual q) {
         return null;
+    }
+
+    /**
+     *
+     */
+    public void mutate() {
+
     }
 }
