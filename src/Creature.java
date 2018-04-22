@@ -1,9 +1,9 @@
 import processing.core.*;
 
-public class Creature extends PApplet implements Comparable<Creature> {
+public class Creature {
 
     // temp vars
-    private static final int nInputs = 2; // x, y
+    private static final int nInputs = 4; // x, y
     private static final int nOutputs = 2; //xa, ya
 
     double x;
@@ -32,9 +32,10 @@ public class Creature extends PApplet implements Comparable<Creature> {
      * Creates a new Creature given a brain
      * @param brain - Neural Network of Creature brain
      */
-    public Creature (NeuralNetwork brain) {
-        this.x = Sketch.W / 2;
-        this.y = Sketch.H / 2;
+    public Creature (Sketch p, NeuralNetwork brain) {
+        this.p = p;
+        this.x = p.width / 2;
+        this.y = p.height / 2;
         this.dx = 0;
         this.dy = 0;
         this.brain = brain;
@@ -43,9 +44,9 @@ public class Creature extends PApplet implements Comparable<Creature> {
     public void update() {
         // outputs represent x and y acceleration
         double[] outputs = brain.predict(nnInputs());
-        this.dx += outputs[0];
+        this.dx += outputs[0] * .1;
         this.dx = Math.max(-maxV, Math.min(this.dx, maxV));
-        this.dy += outputs[1];
+        this.dy += outputs[1] * .1;
         this.dy = Math.max(-maxV, Math.min(this.dy, maxV));
         this.x += this.dx;
         this.y += this.dy;
@@ -57,7 +58,7 @@ public class Creature extends PApplet implements Comparable<Creature> {
 
     // Temp fitness function go right
     public double fitness() {
-        return x;
+        return x / 100;
     }
 
     public void mutate(double mr, int mf) {
@@ -65,16 +66,14 @@ public class Creature extends PApplet implements Comparable<Creature> {
     }
 
     private double[] nnInputs() {
-        return new double[] {this.x, this.y};
+        return new double[] {this.x, this.y, this.dx, this.dy};
     }
 
     public void print() {
         System.out.println(x + " " + y);
     }
 
-    // creatures with greater fitness will be ordered earlier
-    public int compareTo (Creature o) {
-        return -Double.compare(this.fitness(), o.fitness());
+    public Creature copy() {
+        return new Creature(this.p, this.brain.copy());
     }
-
 }

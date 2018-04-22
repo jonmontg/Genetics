@@ -102,6 +102,15 @@ public class NeuralNetwork {
      * @return - an exact copy of the Neural Network
      */
     public NeuralNetwork copy() {
+
+        Neuron[][] newNetwork = new Neuron[this.network.length][];
+        for (int i = 0; i < this.network.length; i++) {
+            newNetwork[i] = new Neuron[this.network[i].length];
+            for (int j = 0; j < this.network[i].length; j++) {
+                newNetwork[i][j] = this.network[i][j].copy();
+            }
+        }
+
         return new NeuralNetwork(this.nInputs, this.nLayers, this.nOutputs, this.network.clone());
     }
 
@@ -164,10 +173,15 @@ public class NeuralNetwork {
         public void mutate(double rate) {
             Random r = new Random();
             int ind = r.nextInt(this.weights.length + 1);
-            double offset = 2 * r.nextDouble() * rate - 1;
+            double offset = (2 * r.nextDouble() - 1) * rate;
+            System.out.println("offset: " + offset);
             if (ind < this.weights.length) {
                 this.weights[ind] += offset;
             }
+        }
+
+        public Neuron copy() {
+            return new Neuron(this.weights, this.bias);
         }
     }
 }

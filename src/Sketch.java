@@ -18,15 +18,14 @@ public class Sketch extends PApplet {
         // init simulation
 
         Population[] creatures = new Population[2];
-        creatures[0] = new Population(this, 10, .1, 1,  new int[] {3});
-        creatures[1] = new Population(this, 10, .1, 1,  new int[] {4});
+        creatures[0] = new Population(this, 100, 3, 100, new int[] {3, 3, 3});
+        creatures[1] = new Population(this, 100, .1, 100, new int[] {4, 4, 4});
 
-        s = new Simulation(5000, creatures);
+        s = new Simulation(this, 100, creatures);
         background(100);
     }
 
     public void draw() {
-        System.out.println("frame");
         s.update();
         s.draw();
     }
