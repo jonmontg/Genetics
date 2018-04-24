@@ -2,38 +2,50 @@ import processing.core.*;
 
 public class Simulation {
 
-    Sketch p;
-    Population[] populations;
-    int simFrames;
-    int currFrame = 0;
-    int speedMult = 1;
+    private Sketch p;
+    private Population[] populations;
+    private int simFrames;
+    private int currFrame = 0;
+    private int speedMult = 1;
+    private PVector target;
 
     public Simulation(Sketch p, int length, Population[] creatures) {
         this.p = p;
         this.simFrames = length;
         this.populations = creatures;
+        this.target = new PVector(this.p.width / 2, this.p.height / 4);
     }
 
     public void update() {
-        System.out.println("F: " + this.currFrame);
-        for (int n = 0; n < speedMult; n++) {
+        for (int frame = 0; frame < speedMult; frame++) {
             this.currFrame++;
-            for (int i = 0; i < this.populations.length; i++) {
-                this.populations[i].update();
+            p.background(100);
+            p.color(255);
+            for (Population p: this.populations) {
+                p.update();
             }
+            p.color(0, 255, 255);
+            p.ellipse(this.target.x, this.target.y, 10, 10);
         }
         if (this.currFrame >= simFrames) {
             this.currFrame = 0;
-            for (int i = 0; i < this.populations.length; i++) {
-                this.populations[i].nextGen();
+            for (Population p: this.populations) {
+                p.nextGen();
             }
             p.background(100);
         }
     }
 
+    public void setTarget(PVector target) {
+        for (Population p : this.populations) {
+            this.target = target;
+            p.setTarget(target);
+        }
+    }
+
     public void draw() {
-        for (int i = 0; i < this.populations.length; i++) {
-            this.populations[i].draw();
+        for (Population p: this.populations) {
+            p.draw();
         }
     }
 }

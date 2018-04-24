@@ -91,9 +91,11 @@ public class NeuralNetwork {
     public void mutate(double mr, int mf) {
         Random r = new Random();
         for (int f = 0; f < mf; f++) {
-            int layer = r.nextInt(this.network.length);
-            int neuron = r.nextInt(this.network[layer].length);
-            this.network[layer][neuron].mutate(mr);
+            for (int i = 0; i < this.network.length; i++) {
+                for (int j = 0; j < this.network[i].length; j++) {
+                    this.network[i][j].mutate(mr);
+                }
+            }
         }
     }
 
@@ -111,7 +113,7 @@ public class NeuralNetwork {
             }
         }
 
-        return new NeuralNetwork(this.nInputs, this.nLayers, this.nOutputs, this.network.clone());
+        return new NeuralNetwork(this.nInputs, this.nLayers, this.nOutputs, newNetwork);
     }
 
 
@@ -163,6 +165,7 @@ public class NeuralNetwork {
             for (int i = 0; i < inputs.length; i++) {
                 val += this.weights[i] * inputs[i];
             }
+            //System.out.println(val);
             return Math.tanh(val); // Activation function tanh(x)
         }
 
@@ -172,11 +175,12 @@ public class NeuralNetwork {
          */
         public void mutate(double rate) {
             Random r = new Random();
-            int ind = r.nextInt(this.weights.length + 1);
-            double offset = (2 * r.nextDouble() - 1) * rate;
-            System.out.println("offset: " + offset);
-            if (ind < this.weights.length) {
-                this.weights[ind] += offset;
+            for (int i = 0; i < this.weights.length + 1; i++) {
+                if (i < this.weights.length) {
+                    this.weights[i] += r.nextGaussian() * rate;
+                } else {
+                    this.bias += r.nextGaussian();
+                }
             }
         }
 
