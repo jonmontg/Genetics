@@ -6,7 +6,7 @@ public class Simulation {
     private Population[] populations;
     private int simFrames;
     private int currFrame = 0;
-    private int speedMult = 1;
+    private int speedMult = 2;
     private PVector target;
 
     public Simulation(Sketch p, int length, Population[] creatures) {
@@ -24,8 +24,8 @@ public class Simulation {
             for (Population p: this.populations) {
                 p.update();
             }
-            p.color(0, 255, 255);
-            p.ellipse(this.target.x, this.target.y, 10, 10);
+            p.fill(255, 255, 255);
+            p.ellipse(this.target.x, this.target.y, 16, 16);
         }
         if (this.currFrame >= simFrames) {
             this.currFrame = 0;
@@ -37,15 +37,18 @@ public class Simulation {
     }
 
     public void setTarget(PVector target) {
-        for (Population p : this.populations) {
             this.target = target;
-            p.setTarget(target);
-        }
     }
 
     public void draw() {
         for (Population p: this.populations) {
             p.draw();
+        }
+    }
+
+    public void updateFitness(Creature c) {
+        if (c.isAlive()) {
+            c.setFitness(c.getFitness() + (double)PVector.dist(c.getPos(), this.target) / 1000);
         }
     }
 }

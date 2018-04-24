@@ -165,7 +165,7 @@ public class NeuralNetwork {
             for (int i = 0; i < inputs.length; i++) {
                 val += this.weights[i] * inputs[i];
             }
-            //System.out.println(val);
+            //System.out.println("V"+val);
             return Math.tanh(val); // Activation function tanh(x)
         }
 
