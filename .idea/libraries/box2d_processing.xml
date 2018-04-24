@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="box2d_processing">
-    <CLASSES>
-      <root url="jar://$USER_HOME$/.Software/Box2D-for-Processing/Box2D-for-Processing/dist/box2d_processing/library/box2d_processing.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

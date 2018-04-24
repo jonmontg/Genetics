@@ -1,24 +1,23 @@
 import org.jbox2d.common.Vec2;
 import org.jbox2d.dynamics.Body;
 import processing.core.PApplet;
-import shiffman.box2d.Box2DProcessing;
-
 import java.util.LinkedList;
 import java.util.Random;
 
 
-public class MainApp extends PApplet {
+public class World extends PApplet {
+
+
 
     private Box2DProcessing box2d;
     private LinkedList<Circle> circles = new LinkedList<>();
     private LinkedList<Box> boxes = new LinkedList<>();
     private LinkedList<Boundary> boundaries = new LinkedList<>();
     private Creature creature;
-
-    boolean simulate = true;
+    private boolean show = false;
 
     public static void main(String[] args) {
-        PApplet.main("MainApp", args);
+        PApplet.main("World");
     }
 
     public void settings() {
@@ -29,32 +28,42 @@ public class MainApp extends PApplet {
         box2d = new Box2DProcessing(this);
         box2d.createWorld();
         boundaries.add(new Boundary(400,600,800,10,box2d));
-        creature = new Creature(400, 500,100, 15, box2d);
-        creature.addBox(100, 15);
+        creature = new Creature(400, 500,100, 15, 3, box2d);
 
         LinkedList<Float> speeds = new LinkedList<>();
         LinkedList<Float> torques = new LinkedList<>();
-        speeds.add(PI*2);
-        speeds.add(PI*2);
+        speeds.add((float)Math.PI*2);
+        speeds.add((float)Math.PI*2);
         torques.add(10000f);
         torques.add(10000f);
         creature.setJointSpeeds(speeds);
         creature.setJointTorques(torques);
+        Staircase stairs = new Staircase(new Vec2(400, 600), 10, 10, 10, box2d);
+        boundaries.addAll(stairs.getShape());
     }
 
     public void draw() {
-        background(255);
         box2d.step();
+        if (mousePressed)
+            toggleShow();
 
-        if (mousePressed) {
-            LinkedList<Float> newSpeeds = new LinkedList<>();
-            Random rand = new Random();
-            for (int i=0; i<creature.getJoints().size(); i++)
-                newSpeeds.add(2*PI-rand.nextFloat()*4*PI);
-            creature.setJointSpeeds(newSpeeds);
+        if (show) {
+            background(255);
+
+            if (mousePressed) {
+                LinkedList<Float> newSpeeds = new LinkedList<>();
+                Random rand = new Random();
+                for (int i = 0; i < creature.getJoints().size(); i++)
+                    newSpeeds.add(2 * PI - rand.nextFloat() * 4 * PI);
+                creature.setJointSpeeds(newSpeeds);
+            }
+
+            for (Boundary bound : boundaries) {
+                displayBoundary(bound);
+            }
+
+            displayCreature(creature);
         }
-
-        displayCreature(creature);
     }
 
     public void displayCircle(Circle circle) {
@@ -91,7 +100,7 @@ public class MainApp extends PApplet {
         fill(0);
         stroke(0);
         rectMode(CENTER);
-        Vec2 posn = bound.getPosn();
+        Vec2 posn = bound.getPixelPosn();
         Vec2 dim = bound.getDimensions();
         rect(posn.x, posn.y, dim.x, dim.y);
     }
@@ -139,5 +148,9 @@ public class MainApp extends PApplet {
             posn = start + (len/2);
         }
         return new float[] {posn, len};
+    }
+
+    public void toggleShow() {
+        show = !show;
     }
 }

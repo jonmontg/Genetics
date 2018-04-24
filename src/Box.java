@@ -4,7 +4,6 @@ import org.jbox2d.dynamics.Body;
 import org.jbox2d.dynamics.BodyDef;
 import org.jbox2d.dynamics.BodyType;
 import org.jbox2d.dynamics.FixtureDef;
-import shiffman.box2d.Box2DProcessing;
 
 public class Box {
     Body body;
@@ -54,4 +53,6 @@ public class Box {
     public float getWidth() {
         return width;
     }
+
+    public Box2DProcessing getBox2d() { return box2d; }
 }

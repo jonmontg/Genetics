@@ -1,6 +1,5 @@
 import org.jbox2d.dynamics.joints.RevoluteJoint;
 import org.jbox2d.dynamics.joints.RevoluteJointDef;
-import shiffman.box2d.Box2DProcessing;
 
 public class Windmill {
     RevoluteJoint j;

@@ -1,8 +1,6 @@
 import org.jbox2d.common.Vec2;
 import org.jbox2d.dynamics.joints.RevoluteJoint;
 import org.jbox2d.dynamics.joints.RevoluteJointDef;
-import processing.core.PVector;
-import shiffman.box2d.Box2DProcessing;
 
 import java.util.LinkedList;
 
@@ -13,7 +11,7 @@ public class Creature {
 
 
 
-    public Creature(float x, float y, float width, float height, Box2DProcessing box2d) {
+    public Creature(float x, float y, float width, float height, int numberOfSegments, Box2DProcessing box2d) {
         this.box2d = box2d;
         Box box1 = new Box(x-(width/2)-5, y, width, height, 0, box2d);
         Box box2 = new Box(x+(width/2)-5, y, width, height, 0, box2d);
@@ -30,11 +28,13 @@ public class Creature {
         joints.add(new RevolvingConnection((RevoluteJoint)box2d.world.createJoint(jd), box2d));
         boxes.add(box1);
         boxes.add(box2);
+        for (int i=2; i<numberOfSegments; i++)
+            addBox(width, height);
     }
 
-    public void addBox(float width, float height) {
+    private void addBox(float width, float height) {
         Box lastBox = boxes.getLast();
-        PVector lastPosn = box2d.getBodyPixelCoordPVector(lastBox.getBody());
+        Vec2 lastPosn = box2d.getBodyPixelCoord(lastBox.getBody());
         Box newBox = new Box(lastPosn.x+(lastBox.getWidth()/2)-5+(width/2), lastPosn.y, width, height, 0, box2d);
         RevoluteJointDef jd = new RevoluteJointDef();
 
@@ -44,6 +44,10 @@ public class Creature {
         jd.enableMotor=true;
         joints.add(new RevolvingConnection((RevoluteJoint)box2d.world.createJoint(jd), box2d));
         boxes.add(newBox);
+    }
+
+    public void advance() {
+
     }
 
     public void setJointSpeeds(LinkedList<Float> speeds) {

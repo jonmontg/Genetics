@@ -1,7 +1,6 @@
 import org.jbox2d.collision.shapes.CircleShape;
 import org.jbox2d.common.Vec2;
 import org.jbox2d.dynamics.*;
-import shiffman.box2d.Box2DProcessing;
 
 public class Circle {
     Body body;

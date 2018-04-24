@@ -2,7 +2,6 @@ import org.jbox2d.common.Vec2;
 import org.jbox2d.dynamics.joints.Joint;
 import org.jbox2d.dynamics.joints.RevoluteJoint;
 import org.jbox2d.dynamics.joints.RevoluteJointDef;
-import shiffman.box2d.Box2DProcessing;
 
 public class RevolvingConnection {
 
