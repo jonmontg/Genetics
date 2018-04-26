@@ -3,6 +3,7 @@ import org.jbox2d.common.Vec2;
 import org.jbox2d.dynamics.Body;
 import org.jbox2d.dynamics.BodyDef;
 import org.jbox2d.dynamics.BodyType;
+import org.jbox2d.dynamics.FixtureDef;
 
 
 public class Boundary {
@@ -28,6 +29,8 @@ public class Boundary {
         PolygonShape ps = new PolygonShape();
         ps.setAsBox(box2dw, box2dh);
 
+        FixtureDef fd = new FixtureDef();
+
         body.createFixture(ps,1);
     }
 
@@ -38,4 +41,5 @@ public class Boundary {
     public Vec2 getDimensions() {
         return new Vec2(width, height);
     }
+    public float[] getDims() { return new float[] {x, y, width, height}; }
 }

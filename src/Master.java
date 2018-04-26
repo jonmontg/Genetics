@@ -7,9 +7,9 @@ import java.util.Random;
 
 public class Master extends PApplet {
 
-    private LinkedList<Box2DProcessing> worlds = new LinkedList<>();
+    Box2DProcessing box2d;
     private LinkedList<Creature> creatures = new LinkedList<>();
-    private LinkedList<DisplayBox> boundaries = new LinkedList<>();
+    private LinkedList<Boundary> boundaries = new LinkedList<>();
 
 
     public static void main(String[] args) {
@@ -21,26 +21,20 @@ public class Master extends PApplet {
     }
 
     public void setup() {
+        box2d = new Box2DProcessing(this);
+        box2d.createWorld();
         for (int i=0; i<100; i++) {
-            Box2DProcessing nw = new Box2DProcessing(this);
-            worlds.add(nw);
-            nw.createWorld();
-            creatures.add(new Creature(width / 15, height - 30, 30, 10, 3, nw));
-            new Boundary(400,600,800,10, nw);
+            creatures.add(new Creature(width / 15, height - 30, 30, 10, 3, box2d));
         }
-        boundaries.add(new DisplayBox(400, 600, 800, 10));
+        boundaries.add(new Boundary(400, 600, 800, 10, box2d));
     }
 
     public void draw() {
 
         background(255);
-        for (Box2DProcessing world : worlds)
-            world.step();
+        box2d.step();
 
-        for (Creature creature: creatures)
-            creature.advance();
-
-        for (DisplayBox bound : boundaries)
+        for (Boundary bound : boundaries)
             displayBoundary(bound);
 
         displayCreature(0);
@@ -76,11 +70,11 @@ public class Master extends PApplet {
         popMatrix();
     }
 
-    public void displayBoundary(DisplayBox bound) {
+    public void displayBoundary(Boundary bound) {
         fill(0);
         stroke(0);
         rectMode(CENTER);
-        float[] dims = bound.getDim();
+        float[] dims = bound.getDims();
         rect(dims[0], dims[1], dims[2], dims[3]);
     }
 

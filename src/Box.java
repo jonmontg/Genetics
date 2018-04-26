@@ -31,6 +31,7 @@ public class Box {
         fd.density = 1f;
         fd.friction = .3f;
         fd.restitution = .5f;
+        fd.filter.groupIndex = -1;
         body.createFixture(fd);
     }
 

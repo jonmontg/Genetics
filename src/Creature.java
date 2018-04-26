@@ -19,9 +19,6 @@ public class Creature {
         Vec2 posn = new Vec2(box1.getBody().getWorldCenter().x+box2d.scalarPixelsToWorld((width/2)),
                 box1.getBody().getWorldCenter().y);
         jd.initialize(box1.getBody(), box2.getBody(), posn);
-        jd.motorSpeed = (float)6.28;
-        jd.maxMotorTorque = 1000f;
-        jd.enableMotor=true;
 
         boxes = new LinkedList<>();
         joints = new LinkedList<>();
@@ -44,10 +41,6 @@ public class Creature {
         jd.enableMotor=true;
         joints.add(new RevolvingConnection((RevoluteJoint)box2d.world.createJoint(jd), box2d));
         boxes.add(newBox);
-    }
-
-    public void advance() {
-
     }
 
     public void setJointSpeeds(LinkedList<Float> speeds) {
