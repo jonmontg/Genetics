@@ -24,7 +24,8 @@ public class Master extends PApplet {
         box2d = new Box2DProcessing(this);
         box2d.createWorld();
         for (int i=0; i<100; i++) {
-            creatures.add(new Creature(width / 15, height - 30, 30, 10, 3, box2d));
+            creatures.add(new Creature(width/15, height-30, new float[] {30, 10, 40, 5, 20, 10}, box2d));
+            //creatures.add(new Creature(width / 15, height - 30, 30, 10, 3, box2d));
         }
         boundaries.addAll(new StaircaseWindow(width, height, 15, box2d).getBoundaries());
     }
@@ -44,8 +45,8 @@ public class Master extends PApplet {
         for (Boundary bound : boundaries)
             displayBoundary(bound);
 
-        displayAllCreatures();
-        //displayCreature(0);
+        //displayAllCreatures();
+        displayCreature(0);
     }
 
     public void displayCreature(int i) {
