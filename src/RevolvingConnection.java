@@ -1,4 +1,5 @@
 import org.jbox2d.common.Vec2;
+import org.jbox2d.dynamics.Body;
 import org.jbox2d.dynamics.joints.Joint;
 import org.jbox2d.dynamics.joints.RevoluteJoint;
 import org.jbox2d.dynamics.joints.RevoluteJointDef;
@@ -20,4 +21,5 @@ public class RevolvingConnection {
     public void setTorque(float torque) {
         joint.setMaxMotorTorque(torque);
     }
+    public RevoluteJoint getJoint() {return this.joint; }
 }

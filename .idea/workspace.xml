@@ -2,26 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b336fe1d-1309-4e31-80b4-b281029df394" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Genetics/Creature.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Genetics/Creature.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Genetics/DisplayBox.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Genetics/DisplayShape.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Genetics/Master.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Genetics/Master.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Genetics/Population.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Genetics/StaircaseWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Genetics/StaircaseWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Genetics/Windmill.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Genetics/World.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Circle.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Creature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Creature.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DisplayBox.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DisplayShape.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Environment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Individual.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Master.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Master.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Population.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StaircaseWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StaircaseWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Windmill.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/World.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RevolvingConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RevolvingConnection.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,7 +15,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Master.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Master.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Master.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="540">
@@ -52,18 +34,28 @@
               <caret line="13" column="112" selection-start-line="13" selection-start-column="112" selection-end-line="13" selection-end-column="112" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#556#557#0" expanded="true" />
-                <element signature="e#589#590#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Creature.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Creature.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Creature.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-108">
-              <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+            <state relative-caret-position="759">
+              <caret line="77" column="5" lean-forward="true" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RevolvingConnection.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/RevolvingConnection.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="23" column="56" selection-start-line="23" selection-start-column="56" selection-end-line="23" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -86,7 +78,7 @@
       <file leaf-file-name="Boundary.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Boundary.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
+            <state relative-caret-position="465">
               <caret line="31" column="41" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -131,7 +123,6 @@
         <option value="$PROJECT_DIR$/src/Box2DContactListener.java" />
         <option value="$PROJECT_DIR$/src/Windmill.java" />
         <option value="$PROJECT_DIR$/src/Circle.java" />
-        <option value="$PROJECT_DIR$/src/RevolvingConnection.java" />
         <option value="$PROJECT_DIR$/src/Staircase.java" />
         <option value="$PROJECT_DIR$/src/MainApp.java" />
         <option value="$PROJECT_DIR$/src/DisplayShape.java" />
@@ -140,8 +131,9 @@
         <option value="$PROJECT_DIR$/src/World.java" />
         <option value="$PROJECT_DIR$/src/DisplayBox.java" />
         <option value="$PROJECT_DIR$/src/StaircaseWindow.java" />
-        <option value="$PROJECT_DIR$/src/Creature.java" />
         <option value="$PROJECT_DIR$/src/Master.java" />
+        <option value="$PROJECT_DIR$/src/RevolvingConnection.java" />
+        <option value="$PROJECT_DIR$/src/Creature.java" />
       </list>
     </option>
   </component>
@@ -154,10 +146,10 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="67" />
+  <component name="ProjectFrameBounds" extendedState="4">
+    <option name="x" value="993" />
     <option name="y" value="25" />
-    <option name="width" value="1853" />
+    <option name="width" value="927" />
     <option name="height" value="1055" />
   </component>
   <component name="ProjectView">
@@ -165,7 +157,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -189,30 +180,7 @@
       </pane>
       <pane id="AndroidView" />
       <pane id="PackagesPane" />
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="genetic-algorithm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="genetic-algorithm" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="genetic-algorithm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="genetic-algorithm" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="genetic-algorithm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="genetic-algorithm" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -221,7 +189,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../c343-jonmontg/p7" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -361,85 +329,63 @@
       <workItem from="1524319404671" duration="3809000" />
       <workItem from="1524354607776" duration="5526000" />
       <workItem from="1524523179977" duration="6568000" />
+      <workItem from="1524773224020" duration="502000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96420000" />
+    <option name="totallyTimeSpent" value="96922000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
+    <frame x="993" y="25" width="927" height="1055" extended-state="4" />
     <editor active="true" />
     <layout>
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" weight="0.32910052" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info id="Image Layers" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32910052" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info id="Capture Tool" />
-      <window_info id="Designer" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13761468" />
-      <window_info anchor="right" id="Database" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.0074074073" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="UI Designer" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info id="Favorites" side_tool="true" />
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info id="Designer" order="2" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.123043716" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32804233" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info id="UI Designer" order="2" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32804233" />
-      <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info id="Image Layers" order="2" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.32698414" />
       <window_info anchor="right" id="Maven Projects" order="3" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32804233" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Designer" order="2" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24595469" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="2" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32804233" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32698414" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32804233" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.123043716" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32804233" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32804233" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
@@ -448,7 +394,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Capture Tool" order="5" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32804233" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32698414" />
       <window_info anchor="right" id="Maven Projects" order="8" />
       <window_info id="Favorites" order="6" side_tool="true" />
@@ -464,69 +410,16 @@
     <entry file="file://$PROJECT_DIR$/src/RevolvingConnection.java" />
     <entry file="file://$PROJECT_DIR$/src/Creature.java" />
     <entry file="file://$PROJECT_DIR$/src/Spring.java" />
-    <entry file="file://$PROJECT_DIR$/src/World.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Population.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/World.java" />
-    <entry file="file://$PROJECT_DIR$/src/Environment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Individual.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="29" column="16" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/World.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Population.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Population.java" />
     <entry file="file://$PROJECT_DIR$/src/World.java" />
-    <entry file="file://$PROJECT_DIR$/src/Environment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="24" selection-start-column="24" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Individual.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Environment.java" />
+    <entry file="file://$PROJECT_DIR$/src/Individual.java" />
+    <entry file="file://$PROJECT_DIR$/src/World.java" />
+    <entry file="file://$PROJECT_DIR$/src/Population.java" />
+    <entry file="file://$PROJECT_DIR$/src/World.java" />
+    <entry file="file://$PROJECT_DIR$/src/Environment.java" />
+    <entry file="file://$PROJECT_DIR$/src/Individual.java" />
     <entry file="file://$PROJECT_DIR$/src/jbox2d-library/conv.sh" />
     <entry file="file://$PROJECT_DIR$/src/World.java" />
     <entry file="file://$PROJECT_DIR$/src/physics.java" />
@@ -555,33 +448,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/RevolvingConnection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="51" selection-start-line="3" selection-start-column="51" selection-end-line="3" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Windmill.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="51" selection-start-line="1" selection-start-column="51" selection-end-line="1" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Windmill.java" />
     <entry file="file://$PROJECT_DIR$/src/Box2DContactListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="888">
           <caret line="78" column="27" selection-start-line="78" selection-start-column="27" selection-end-line="78" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -595,13 +466,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/World.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="31" lean-forward="true" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/World.java" />
     <entry file="file://$PROJECT_DIR$/src/Box2DProcessing.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -615,13 +480,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Sketch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sketch.java" />
     <entry file="file://$PROJECT_DIR$/src/Box.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
@@ -632,50 +491,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/World.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="50" column="11" selection-start-line="50" selection-start-column="11" selection-end-line="50" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DisplayBox.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="13" selection-start-column="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DisplayShape.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Population.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Circle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/World.java" />
+    <entry file="file://$PROJECT_DIR$/src/DisplayBox.java" />
+    <entry file="file://$PROJECT_DIR$/src/DisplayShape.java" />
+    <entry file="file://$PROJECT_DIR$/src/Population.java" />
+    <entry file="file://$PROJECT_DIR$/src/Circle.java" />
     <entry file="file://$PROJECT_DIR$/src/Boundary.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
+        <state relative-caret-position="465">
           <caret line="31" column="41" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -689,40 +512,36 @@
           <caret line="13" column="112" selection-start-line="13" selection-start-column="112" selection-end-line="13" selection-end-column="112" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#556#557#0" expanded="true" />
-            <element signature="e#589#590#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Creature.java">
+    <entry file="file://$PROJECT_DIR$/src/Environment.java" />
+    <entry file="file://$PROJECT_DIR$/src/Individual.java" />
+    <entry file="file://$PROJECT_DIR$/src/Master.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-108">
-          <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+        <state relative-caret-position="540">
+          <caret line="40" column="37" selection-start-line="40" selection-start-column="37" selection-end-line="40" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Environment.java">
+    <entry file="file://$PROJECT_DIR$/src/RevolvingConnection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
+        <state relative-caret-position="225">
+          <caret line="23" column="56" selection-start-line="23" selection-start-column="56" selection-end-line="23" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Individual.java">
+    <entry file="file://$PROJECT_DIR$/src/Creature.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="29" column="26" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Master.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="40" column="37" selection-start-line="40" selection-start-column="37" selection-end-line="40" selection-end-column="37" />
+        <state relative-caret-position="759">
+          <caret line="77" column="5" lean-forward="true" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

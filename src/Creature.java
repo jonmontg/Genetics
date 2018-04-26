@@ -63,4 +63,17 @@ public class Creature {
     public LinkedList<RevolvingConnection> getJoints() {
         return joints;
     }
+
+    public LinkedList<Float> getSpeeds() {
+        LinkedList<Float> speeds = new LinkedList<>();
+        for (RevolvingConnection j : joints)
+            speeds.add(j.getJoint().getJointSpeed());
+        return speeds;
+    }
+    public LinkedList<Float> getAngles() {
+        LinkedList<Float> angles = new LinkedList<>();
+        for (RevolvingConnection j : joints)
+            angles.add(j.getJoint().getReferenceAngle());
+        return angles;
+    }
 }
