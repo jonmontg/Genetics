@@ -25,7 +25,7 @@ public class Creature {
      */
     public Creature(Sketch p, int[] brainSize, PVector col) {
         this.p = p;
-        this.pos = new PVector(p.width / 2, 3 * p.height / 4);
+        this.pos = new PVector(p.width / 2, p.height / 2);
         this.vel = new PVector(0, 0);
         this.acc = new PVector(0, 0);
         this.target = new PVector(p.width / 2, p.height / 4);
@@ -40,7 +40,7 @@ public class Creature {
      */
     public Creature (Sketch p, NeuralNetwork brain, PVector target, PVector col) {
         this.p = p;
-        this.pos = new PVector(p.width / 2, 3 * p.height / 4);
+        this.pos = new PVector(p.width / 2, p.height / 2);
         this.vel = new PVector(0, 0);
         this.acc = new PVector(0, 0);
         this.target = target;

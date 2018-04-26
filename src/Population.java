@@ -86,13 +86,19 @@ public class Population {
         return this.creatures.get(best).copy();
     }
 
+    public void setTarget(PVector target) {
+        for (Creature c: this.creatures) {
+            c.setTarget(target);
+        }
+    }
+
     public void nextGen() {
         this.sortCreatures();
         this.fitness = this.creatures.get(0).getFitness(); // temporarily using best getFitness
 
         ArrayList<Creature> newGen = new ArrayList<>();
         for (int c = 0; c < this.creatures.size(); c++) {
-            newGen.add(tournamentSelect(30));
+            newGen.add(tournamentSelect(50));
         }
         for (Creature c: newGen) {
             c.mutate(this.mutationRate, this.mutationFrequency);

@@ -17,12 +17,12 @@ public class Sketch extends PApplet {
         noStroke();
         // init simulation
         Population[] creatures = new Population[6];
-        creatures[0] = new Population(this, 200, .1, 1, new int[] {10}, new PVector(255, 0, 0));
-        creatures[1] = new Population(this, 200, .1, 1, new int[] {10}, new PVector(150, 0, 0));
-        creatures[2] = new Population(this, 200, 1, 1, new int[] {10}, new PVector(255, 255, 0));
-        creatures[3] = new Population(this, 200, 1, 1, new int[] {10}, new PVector(150, 150, 0));
-        creatures[4] = new Population(this, 200, 5, 1, new int[] {10, 10}, new PVector(0, 255, 0));
-        creatures[5] = new Population(this, 200, 5, 1, new int[] {10, 10}, new PVector(0, 150, 0));
+        creatures[0] = new Population(this, 200, .6, 1, new int[] {10}, new PVector(255, 0, 0));
+        creatures[1] = new Population(this, 200, .7, 1, new int[] {10}, new PVector(150, 0, 0));
+        creatures[2] = new Population(this, 200, .8, 1, new int[] {10}, new PVector(255, 255, 0));
+        creatures[3] = new Population(this, 200, .9, 1, new int[] {10}, new PVector(150, 150, 0));
+        creatures[4] = new Population(this, 200, 1, 1, new int[] {10}, new PVector(0, 255, 0));
+        creatures[5] = new Population(this, 200, 1.1, 1, new int[] {10}, new PVector(0, 150, 0));
         //creatures[6] = new Population(this, 50, .001, 1, new int[] {10, 10}, new PVector(0, 255, 255));
         //creatures[7] = new Population(this, 50, .001, 1, new int[] {10, 10}, new PVector(0, 150, 150));
         //creatures[8] = new Population(this, 50, .001, 1, new int[] {10, 10}, new PVector(0, 0, 255));
@@ -40,13 +40,26 @@ public class Sketch extends PApplet {
 
 
 
-        this.s = new Simulation(this, 200, creatures);
+        this.s = new Simulation(this, 500, creatures);
         background(100);
     }
 
     public void mousePressed() {
         PVector target = new PVector(mouseX, mouseY);
         this.s.setTarget(target);
+    }
+
+    public void keyPressed() {
+        if (key == 'a') {
+            if (this.s.speedMult > 1) {
+                this.s.speedMult /= 2;
+            }
+        } else if (key == 'd') {
+            System.out.println("D");
+            if (this.s.speedMult < 1000) {
+                this.s.speedMult *= 2;
+            }
+        }
     }
 
     public void draw() {
