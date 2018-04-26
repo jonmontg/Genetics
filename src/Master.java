@@ -26,7 +26,7 @@ public class Master extends PApplet {
         for (int i=0; i<100; i++) {
             creatures.add(new Creature(width / 15, height - 30, 30, 10, 3, box2d));
         }
-        boundaries.add(new Boundary(400, 600, 800, 10, box2d));
+        boundaries.addAll(new StaircaseWindow(width, height, 15, box2d).getBoundaries());
     }
 
     public void draw() {
@@ -34,23 +34,30 @@ public class Master extends PApplet {
         background(255);
         box2d.step();
 
+        for (Creature c : creatures) {
+            LinkedList<Float> speeds = new LinkedList<>();
+            speeds.add((float)(java.util.concurrent.ThreadLocalRandom.current().nextFloat()*Math.PI-(2*Math.PI)));
+            speeds.add((float)(java.util.concurrent.ThreadLocalRandom.current().nextFloat()*Math.PI-(2*Math.PI)));
+            c.setJointSpeeds(speeds);
+        }
+
         for (Boundary bound : boundaries)
             displayBoundary(bound);
 
-        displayCreature(0);
-    }
-
-    public void displayCircle(Circle circle) {
-        fill(175);
-        stroke(0);
-
-        Vec2 posn = circle.getPosn();
-        ellipse(posn.x, posn.y, circle.getRadius(), circle.getRadius());
+        displayAllCreatures();
+        //displayCreature(0);
     }
 
     public void displayCreature(int i) {
         for (Box box : creatures.get(i).getBody())
             displayBox(box);
+    }
+
+    public void displayAllCreatures() {
+        for (Creature c : creatures) {
+            for (Box box : c.getBody())
+                displayBox(box);
+        }
     }
 
     public void displayBox(Box box) {
