@@ -4,16 +4,11 @@ import processing.core.PApplet;
 import java.util.LinkedList;
 
 
-public class Master extends PApplet {
+public class MasterDep extends PApplet {
 
     Box2DProcessing box2d;
-    private Population creatures;
+    private LinkedList<Creature> creatures = new LinkedList<>();
     private LinkedList<Boundary> boundaries = new LinkedList<>();
-
-    Creature best;
-    double currSteps = 0;
-    int generation = 0;
-    boolean simulate = true;
 
 
     public static void main(String[] args) {
@@ -27,44 +22,30 @@ public class Master extends PApplet {
     public void setup() {
         box2d = new Box2DProcessing(this);
         box2d.createWorld();
-
-        //StaircaseWindow window = new StaircaseWindow(width, height, 15, box2d);
-        FlatWindow window = new FlatWindow(width, height, box2d);
-        creatures = new Population(box2d, width / 15, height - 30, new float[]{30, 10, 30, 10, 30, 10}, new int[]{10}, window.getGoal(), 20, .001, .001);
-        best = creatures.getCreatures().get(0);
-        boundaries.addAll(window.getBoundaries());
+        for (int i = 0; i < 100; i++) {
+            creatures.add(new Creature(width / 15, height - 30, new float[]{30, 10, 40, 5, 20, 10}, new int[]{10}, box2d));
+            //creatures.add(new Creature(width / 15, height - 30, 30, 10, 3, box2d));
+        }
+        boundaries.addAll(new StaircaseWindow(width, height, 15, box2d).getBoundaries());
     }
 
-
-
     public void draw() {
+
         background(255);
         box2d.step();
+
+        for (Creature c : creatures) {
+            LinkedList<Float> speeds = new LinkedList<>();
+            speeds.add((float)(java.util.concurrent.ThreadLocalRandom.current().nextFloat()*Math.PI-(2*Math.PI)));
+            speeds.add((float)(java.util.concurrent.ThreadLocalRandom.current().nextFloat()*Math.PI-(2*Math.PI)));
+            c.setJointSpeeds(speeds);
+        }
+
         for (Boundary bound : boundaries)
             displayBoundary(bound);
 
-        textSize(32);
-        text("Generation "+generation, width/2, height/2);
-        fill(0, 102, 153);
-
-
-        if (simulate) {
-            if (currSteps > 2000) {
-                best = creatures.reproduce();
-                generation++;
-                currSteps = 0;
-            }
-            currSteps++;
-
-            creatures.update();
-
-            displayAllCreatures();
-            //displayCreature(0);
-        }
-        else {
-            best.update();
-            displayCreature(best);
-        }
+        //displayAllCreatures();
+        displayCreature(0);
     }
 
     /**
@@ -72,12 +53,7 @@ public class Master extends PApplet {
      * @param i - index of Creature to display
      */
     public void displayCreature(int i) {
-        for (Box box : creatures.getCreatures().get(i).getBody())
-            displayBox(box);
-    }
-
-    public void displayCreature(Creature c) {
-        for (Box box : c.getBody())
+        for (Box box : creatures.get(i).getBody())
             displayBox(box);
     }
 
@@ -85,7 +61,7 @@ public class Master extends PApplet {
      * Displays all creatures in the list of creatures
      */
     public void displayAllCreatures() {
-        for (Creature c : creatures.getCreatures()) {
+        for (Creature c : creatures) {
             for (Box box : c.getBody())
                 displayBox(box);
         }
