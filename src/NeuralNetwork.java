@@ -189,16 +189,24 @@ public class NeuralNetwork {
         }
     }
 
-    public static NeuralNetwork mate(NeuralNetwork father, NeuralNetwork mother) {
+    /**
+     * Returns a neural network that is an amalgam of the two parent Neural Networks. The
+     * given crossover rate is the probability that a crossover occurs, the given mutation
+     * rate and mutation frequency are used to mutate the child after it has been created.
+     * @param father - NeuralNetwork
+     * @param mother - NeuralNetwork
+     * @return - Neural Network
+     */
+    public static NeuralNetwork mate(NeuralNetwork father, NeuralNetwork mother, double crossoverProb, double mutationRate, int mutationFreq) {
         NeuralNetwork child = new NeuralNetwork(father.nInputs, father.nLayers, father.nOutputs);
 
         NeuralNetwork curr = father;
         for (int i=0; i<mother.network.length; i++) {
-            if (Math.random() <.1)
+            if (Math.random() < crossoverProb)
                 curr = (curr == mother) ? father : mother;
             child.network[i] = curr.network[i];
         }
-        child.mutate(.01, 2);
+        child.mutate(mutationRate, mutationFreq);
         return child;
     }
 }

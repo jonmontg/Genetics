@@ -12,7 +12,7 @@ public class Master extends PApplet {
 
     Creature best;
     double currSteps = 0;
-    int generation = 0;
+    int generation = 1;
     boolean simulate = true;
 
 
@@ -50,7 +50,7 @@ public class Master extends PApplet {
 
         if (simulate) {
             if (currSteps > 2000) {
-                best = creatures.reproduce();
+                best = creatures.reproduce(.1, .1, 2);
                 generation++;
                 currSteps = 0;
             }

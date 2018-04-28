@@ -2,23 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b336fe1d-1309-4e31-80b4-b281029df394" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/FlatWindow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MasterDep.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/NeuralNetwork.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Population.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Genetics/Box.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Genetics/Box.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Genetics/Creature.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Genetics/Creature.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Genetics/Master.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Genetics/Master.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Genetics/RevolvingConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Genetics/RevolvingConnection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Genetics/Staircase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Genetics/Staircase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Genetics/StaircaseWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Genetics/StaircaseWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Box.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Box.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Creature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Creature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Genetics/NeuralNetwork.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Genetics/NeuralNetwork.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Genetics/Population.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Genetics/Population.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Master.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Master.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RevolvingConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RevolvingConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Staircase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Staircase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StaircaseWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StaircaseWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NeuralNetwork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NeuralNetwork.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Population.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Population.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,57 +18,13 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="DockManager">
-    <window id="4">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file leaf-file-name="FlatWindow.java" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/src/FlatWindow.java">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="330">
-                    <caret line="24" column="40" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
-                    <folding>
-                      <element signature="imports" expanded="true" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-    <window id="3">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file leaf-file-name="Creature.java" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/src/Creature.java">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="189">
-                    <caret line="66" column="122" selection-start-line="66" selection-start-column="122" selection-end-line="66" selection-end-column="122" />
-                    <folding>
-                      <element signature="imports" expanded="true" />
-                      <element signature="e#6135#6136#0" expanded="true" />
-                      <element signature="e#6163#6164#0" expanded="true" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Master.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Master.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Master.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="51" column="29" selection-start-line="51" selection-start-column="29" selection-end-line="51" selection-end-column="29" />
+            <state relative-caret-position="360">
+              <caret line="52" column="54" selection-start-line="52" selection-start-column="54" selection-end-line="52" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -89,8 +35,8 @@
       <file leaf-file-name="StaircaseWindow.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/StaircaseWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="4" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="27" selection-end-column="40" />
+            <state relative-caret-position="255">
+              <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="27" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -98,15 +44,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Population.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Population.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Population.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+            <state relative-caret-position="-79">
+              <caret line="52" column="76" selection-start-line="52" selection-start-column="76" selection-end-line="52" selection-end-column="76" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2264#2265#0" expanded="true" />
-                <element signature="e#2296#2297#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -115,8 +59,8 @@
       <file leaf-file-name="NeuralNetwork.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/NeuralNetwork.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="403">
-              <caret line="196" column="33" selection-start-line="196" selection-start-column="33" selection-end-line="196" selection-end-column="33" />
+            <state relative-caret-position="611">
+              <caret line="208" column="47" selection-start-line="208" selection-start-column="47" selection-end-line="208" selection-end-column="47" />
               <folding>
                 <element signature="e#5736#5737#0" expanded="true" />
                 <element signature="e#5802#5803#0" expanded="true" />
@@ -128,7 +72,7 @@
       <file leaf-file-name="Box.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Box.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
+            <state relative-caret-position="600">
               <caret line="47" column="104" selection-start-line="47" selection-start-column="104" selection-end-line="47" selection-end-column="104" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -183,10 +127,10 @@
         <option value="$PROJECT_DIR$/src/StaircaseWindow.java" />
         <option value="$PROJECT_DIR$/src/Box.java" />
         <option value="$PROJECT_DIR$/src/FlatWindow.java" />
-        <option value="$PROJECT_DIR$/src/NeuralNetwork.java" />
-        <option value="$PROJECT_DIR$/src/Master.java" />
         <option value="$PROJECT_DIR$/src/Creature.java" />
+        <option value="$PROJECT_DIR$/src/NeuralNetwork.java" />
         <option value="$PROJECT_DIR$/src/Population.java" />
+        <option value="$PROJECT_DIR$/src/Master.java" />
       </list>
     </option>
   </component>
@@ -200,9 +144,9 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="4">
-    <option name="x" value="915" />
+    <option name="x" value="993" />
     <option name="y" value="25" />
-    <option name="width" value="1005" />
+    <option name="width" value="927" />
     <option name="height" value="1055" />
   </component>
   <component name="ProjectView">
@@ -210,7 +154,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -232,8 +178,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -280,8 +224,8 @@
       <module name="Genetics" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
-    <configuration name="Universe" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Universe" />
+    <configuration name="Population" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Population" />
       <module name="Genetics" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
@@ -308,9 +252,6 @@
         <value defaultName="singleModule" />
       </option>
       <patterns />
-    </configuration>
-    <configuration name="jbox2d-library-2.2.1.1.jar" type="JarApplication" factoryName="JAR Application" temporary="true">
-      <option name="JAR_PATH" value="$PROJECT_DIR$/lib/jbox2d-library-2.2.1.1.jar" />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -348,19 +289,19 @@
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
     <list>
+      <item itemvalue="Application.MasterDep" />
       <item itemvalue="Application.MainApp" />
-      <item itemvalue="Application.Universe" />
-      <item itemvalue="JAR Application.jbox2d-library-2.2.1.1.jar" />
       <item itemvalue="Application.World" />
       <item itemvalue="Application.Master" />
+      <item itemvalue="Application.Population" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Master" />
+        <item itemvalue="Application.Population" />
         <item itemvalue="Application.MasterDep" />
         <item itemvalue="Application.World" />
         <item itemvalue="Application.MainApp" />
-        <item itemvalue="JAR Application.jbox2d-library-2.2.1.1.jar" />
       </list>
     </recent_temporary>
   </component>
@@ -388,15 +329,17 @@
       <workItem from="1524354607776" duration="5526000" />
       <workItem from="1524523179977" duration="6568000" />
       <workItem from="1524773224020" duration="3018000" />
-      <workItem from="1524839926189" duration="12832000" />
+      <workItem from="1524839926189" duration="15016000" />
+      <workItem from="1524861668930" duration="1277000" />
+      <workItem from="1524933580093" duration="1071000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="112270000" />
+    <option name="totallyTimeSpent" value="116802000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="915" y="25" width="1005" height="1055" extended-state="4" />
+    <frame x="993" y="25" width="927" height="1055" extended-state="4" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -408,19 +351,19 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.13862434" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32804233" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27064678" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2901834" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -430,30 +373,30 @@
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32804233" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32804233" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14678898" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32804233" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="right" id="Database" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info id="Capture Tool" order="5" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32804233" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32698414" />
       <window_info anchor="right" id="Maven Projects" order="8" />
       <window_info id="Favorites" order="6" side_tool="true" />
@@ -597,20 +540,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/NeuralNetwork.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="196" column="33" selection-start-line="196" selection-start-column="33" selection-end-line="196" selection-end-column="33" />
-          <folding>
-            <element signature="e#5736#5737#0" expanded="true" />
-            <element signature="e#5802#5803#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Box.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
+        <state relative-caret-position="600">
           <caret line="47" column="104" selection-start-line="47" selection-start-column="104" selection-end-line="47" selection-end-column="104" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -620,18 +552,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/StaircaseWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="4" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="27" selection-end-column="40" />
+        <state relative-caret-position="255">
+          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="27" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Master.java">
+    <entry file="file://$PROJECT_DIR$/src/NeuralNetwork.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="51" column="29" selection-start-line="51" selection-start-column="29" selection-end-line="51" selection-end-column="29" />
+        <state relative-caret-position="611">
+          <caret line="208" column="47" selection-start-line="208" selection-start-column="47" selection-end-line="208" selection-end-column="47" />
+          <folding>
+            <element signature="e#5736#5737#0" expanded="true" />
+            <element signature="e#5802#5803#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Population.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-79">
+          <caret line="52" column="76" selection-start-line="52" selection-start-column="76" selection-end-line="52" selection-end-column="76" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -640,24 +583,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Creature.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="66" column="122" selection-start-line="66" selection-start-column="122" selection-end-line="66" selection-end-column="122" />
+        <state relative-caret-position="-555">
+          <caret line="64" column="23" lean-forward="true" selection-start-line="64" selection-start-column="23" selection-end-line="64" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6135#6136#0" expanded="true" />
-            <element signature="e#6163#6164#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Population.java">
+    <entry file="file://$PROJECT_DIR$/src/Master.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+        <state relative-caret-position="360">
+          <caret line="52" column="54" selection-start-line="52" selection-start-column="54" selection-end-line="52" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2264#2265#0" expanded="true" />
-            <element signature="e#2296#2297#0" expanded="true" />
           </folding>
         </state>
       </provider>
