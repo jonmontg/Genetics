@@ -7,15 +7,17 @@ public class Population {
     private Box2DProcessing box2d;
     private ArrayList<Creature> creatures;
     private double mutationRate;
-    private double mutationFreq;
+    private int mutationFreq;
     private int size;
     private float startx, starty;
     private float[] dims;
     private int[] brainsize;
     private Vec2 goal;
     private int[] poppool;
+    private double crossoverProb;
+    private Creature bestEver;
 
-    public Population(Box2DProcessing w, float startx, float starty, float[] dims, int[] brainsize, Vec2 goal, int size, double mutationRate, double mutationFreq) {
+    public Population(Box2DProcessing w, float startx, float starty, float[] dims, int[] brainsize, Vec2 goal, int size, double crossoverProb, double mutationRate, int mutationFreq) {
         this.box2d = w;
         this.size = size;
         this.startx = startx;
@@ -23,6 +25,7 @@ public class Population {
         this.dims = dims;
         this.brainsize = brainsize;
         this.goal = goal;
+        this.crossoverProb = crossoverProb;
         this.mutationFreq = mutationFreq;
         this.mutationRate = mutationRate;
         creatures = new ArrayList<>(size);
@@ -35,6 +38,8 @@ public class Population {
                 speeds.add((float)(java.util.concurrent.ThreadLocalRandom.current().nextFloat()*Math.PI-(2*Math.PI)));
             creature.setJointSpeeds(speeds);
         }
+        bestEver = creatures.get(0);
+
         poppool = new int[(int)(.5*size*(size+1))];
         int processed = 0;
         for (int i=0; i<size; i++) {
@@ -50,20 +55,18 @@ public class Population {
         }
     }
 
-    public Creature reproduce(double crossoverRate, double mutationRate, int mutationFreq) {
+    public Creature reproduce() {
         creatures.sort((x, y) -> (x.closestDistance > y.closestDistance) ? 1 : -1);
         Creature best = creatures.get(0);
+
+        if (best.closestDistance < bestEver.closestDistance) // update bestEver if applicable
+            bestEver = best;
+
         for (int i=0; i<size; i++) {
-            //Creature child1 = new Creature(startx, starty, dims, brainsize, box2d);
-            //Creature child2 = new Creature(startx, starty, dims, brainsize, box2d);
-            //child1.brain = NeuralNetwork.mate(creatures.get(i).getBrain(), creatures.get(i+1).getBrain());
-            //child2.brain = NeuralNetwork.mate(creatures.get(i+1).getBrain(), creatures.get(i).getBrain());
-            //creatures.set(i, child1);
-            //creatures.set(i+1, child2);
             Creature father = creatures.get(i);
             Creature mother = creatures.get(choosePartner());
             Creature child = new Creature(startx, starty, dims, brainsize, box2d);
-            child.brain = NeuralNetwork.mate(father.getBrain(), mother.getBrain(), crossoverRate, mutationRate, mutationFreq);
+            child.brain = NeuralNetwork.mate(father.getBrain(), mother.getBrain(), crossoverProb, mutationRate, mutationFreq);
             creatures.set(i, child);
         }
         return best;

@@ -2,13 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b336fe1d-1309-4e31-80b4-b281029df394" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Simulation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Window.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Genetics/Creature.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Genetics/Creature.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Genetics/Master.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Genetics/Master.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Genetics/NeuralNetwork.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Genetics/NeuralNetwork.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Genetics/Population.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Genetics/Population.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FlatWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FlatWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Master.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Master.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NeuralNetwork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NeuralNetwork.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Population.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Population.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StaircaseWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StaircaseWindow.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,11 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Master.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Master.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Master.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="52" column="54" selection-start-line="52" selection-start-column="54" selection-end-line="52" selection-end-column="54" />
+            <state relative-caret-position="195">
+              <caret line="13" column="25" lean-forward="true" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -32,11 +35,41 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Simulation.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Simulation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="29" lean-forward="true" selection-start-column="29" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Window.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Window.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="30" selection-start-column="30" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="StaircaseWindow.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/StaircaseWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="27" selection-end-column="40" />
+            <state relative-caret-position="105">
+              <caret line="7" column="53" lean-forward="true" selection-start-line="7" selection-start-column="53" selection-end-line="7" selection-end-column="53" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FlatWindow.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/FlatWindow.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -47,8 +80,8 @@
       <file leaf-file-name="Population.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Population.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-79">
-              <caret line="52" column="76" selection-start-line="52" selection-start-column="76" selection-end-line="52" selection-end-column="76" />
+            <state relative-caret-position="840">
+              <caret line="59" column="41" lean-forward="true" selection-start-line="59" selection-start-column="41" selection-end-line="59" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -59,7 +92,7 @@
       <file leaf-file-name="NeuralNetwork.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/NeuralNetwork.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="611">
+            <state relative-caret-position="627">
               <caret line="208" column="47" selection-start-line="208" selection-start-column="47" selection-end-line="208" selection-end-column="47" />
               <folding>
                 <element signature="e#5736#5737#0" expanded="true" />
@@ -87,6 +120,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -124,13 +158,15 @@
         <option value="$PROJECT_DIR$/src/RevolvingConnection.java" />
         <option value="$PROJECT_DIR$/src/Staircase.java" />
         <option value="$PROJECT_DIR$/src/MasterDep.java" />
-        <option value="$PROJECT_DIR$/src/StaircaseWindow.java" />
         <option value="$PROJECT_DIR$/src/Box.java" />
-        <option value="$PROJECT_DIR$/src/FlatWindow.java" />
         <option value="$PROJECT_DIR$/src/Creature.java" />
         <option value="$PROJECT_DIR$/src/NeuralNetwork.java" />
         <option value="$PROJECT_DIR$/src/Population.java" />
         <option value="$PROJECT_DIR$/src/Master.java" />
+        <option value="$PROJECT_DIR$/src/Simulation.java" />
+        <option value="$PROJECT_DIR$/src/StaircaseWindow.java" />
+        <option value="$PROJECT_DIR$/src/Window.java" />
+        <option value="$PROJECT_DIR$/src/FlatWindow.java" />
       </list>
     </option>
   </component>
@@ -144,9 +180,9 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="4">
-    <option name="x" value="993" />
+    <option name="x" value="915" />
     <option name="y" value="25" />
-    <option name="width" value="927" />
+    <option name="width" value="1005" />
     <option name="height" value="1055" />
   </component>
   <component name="ProjectView">
@@ -331,15 +367,15 @@
       <workItem from="1524773224020" duration="3018000" />
       <workItem from="1524839926189" duration="15016000" />
       <workItem from="1524861668930" duration="1277000" />
-      <workItem from="1524933580093" duration="1071000" />
+      <workItem from="1524933580093" duration="3235000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116802000" />
+    <option name="totallyTimeSpent" value="118966000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="993" y="25" width="927" height="1055" extended-state="4" />
+    <frame x="915" y="25" width="1005" height="1055" extended-state="4" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -351,12 +387,12 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.13862434" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.13862434" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2901834" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2676617" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -409,8 +445,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/World.java" />
-    <entry file="file://$PROJECT_DIR$/src/Population.java" />
     <entry file="file://$PROJECT_DIR$/src/World.java" />
     <entry file="file://$PROJECT_DIR$/src/Environment.java" />
     <entry file="file://$PROJECT_DIR$/src/Individual.java" />
@@ -530,51 +564,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/FlatWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="24" column="40" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Box.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
           <caret line="47" column="104" selection-start-line="47" selection-start-column="104" selection-end-line="47" selection-end-column="104" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/StaircaseWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="27" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/NeuralNetwork.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="611">
-          <caret line="208" column="47" selection-start-line="208" selection-start-column="47" selection-end-line="208" selection-end-column="47" />
-          <folding>
-            <element signature="e#5736#5737#0" expanded="true" />
-            <element signature="e#5802#5803#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Population.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-79">
-          <caret line="52" column="76" selection-start-line="52" selection-start-column="76" selection-end-line="52" selection-end-column="76" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -591,13 +584,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Master.java">
+    <entry file="file://$PROJECT_DIR$/src/NeuralNetwork.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="52" column="54" selection-start-line="52" selection-start-column="54" selection-end-line="52" selection-end-column="54" />
+        <state relative-caret-position="627">
+          <caret line="208" column="47" selection-start-line="208" selection-start-column="47" selection-end-line="208" selection-end-column="47" />
+          <folding>
+            <element signature="e#5736#5737#0" expanded="true" />
+            <element signature="e#5802#5803#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Population.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="59" column="41" lean-forward="true" selection-start-line="59" selection-start-column="41" selection-end-line="59" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Master.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="25" lean-forward="true" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Window.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="30" selection-start-column="30" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/StaircaseWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="53" lean-forward="true" selection-start-line="7" selection-start-column="53" selection-end-line="7" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FlatWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Simulation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="29" lean-forward="true" selection-start-column="29" selection-end-column="29" />
         </state>
       </provider>
     </entry>

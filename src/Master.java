@@ -30,7 +30,18 @@ public class Master extends PApplet {
 
         //StaircaseWindow window = new StaircaseWindow(width, height, 15, box2d);
         FlatWindow window = new FlatWindow(width, height, box2d);
-        creatures = new Population(box2d, width / 15, height - 30, new float[]{30, 10, 30, 10, 30, 10}, new int[]{10}, window.getGoal(), 20, .001, .001);
+
+        creatures = new Population(
+                box2d,
+                width / 15,
+                height - 30,
+                new float[]{30, 10, 30, 10, 30, 10, 30, 10}, // dims
+                new int[]{10}, window.getGoal(), // goalposn
+                20,
+                .2,
+                .5,
+                1);
+
         best = creatures.getCreatures().get(0);
         boundaries.addAll(window.getBoundaries());
     }
@@ -50,7 +61,7 @@ public class Master extends PApplet {
 
         if (simulate) {
             if (currSteps > 2000) {
-                best = creatures.reproduce(.1, .1, 2);
+                best = creatures.reproduce();
                 generation++;
                 currSteps = 0;
             }
@@ -59,7 +70,6 @@ public class Master extends PApplet {
             creatures.update();
 
             displayAllCreatures();
-            //displayCreature(0);
         }
         else {
             best.update();

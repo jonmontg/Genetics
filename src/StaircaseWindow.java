@@ -2,7 +2,7 @@ import org.jbox2d.common.Vec2;
 
 import java.util.LinkedList;
 
-public class StaircaseWindow {
+public class StaircaseWindow implements Window {
 
     private Box2DProcessing box2d;
     private LinkedList<Boundary> boundaries = new LinkedList<>();
