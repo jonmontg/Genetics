@@ -39,8 +39,11 @@ public class Master extends PApplet {
                 new int[]{10}, window.getGoal(), // goalposn
                 40,
                 .1,
-                .1,
+                .2,
                 1);
+        Vec2 goal = window.getGoal();
+        for (Creature c : creatures.getCreatures())
+            c.setGoal(goal.x, goal.y);
 
         best = creatures.getCreatures().get(0);
         boundaries.addAll(window.getBoundaries());
@@ -62,14 +65,14 @@ public class Master extends PApplet {
         textSize(32);
         text("Generation "+generation, width/2, 30);
         textSize(24);
-        text("Closest: "+creatures.getBestEver().closestDistance, width/2, 60);
+        text("Closest: "+creatures.getBestEver(), width/2, 60);
         fill(0, 102, 153);
 
 
         if (simulate) {
             if (currSteps > 2000) {
                 creatures.nextGen();
-                System.out.println("Gen: "+ generation+" Best: "+creatures.getBestEver().closestDistance);
+                System.out.println("Gen: "+ generation+" Best: "+creatures.getBestEver());
                 generation++;
                 currSteps = 0;
             }

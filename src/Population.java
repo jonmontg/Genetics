@@ -16,7 +16,7 @@ public class Population {
     private Vec2 goal;
     private int[] poppool;
     private double crossoverProb;
-    private Creature bestEver;
+    private float bestEver;
 
     public Population(Box2DProcessing w, float startx, float starty, float[] dims, int[] brainsize, Vec2 goal, int size,
                       double crossoverProb, double mutationRate, int mutationFreq) {
@@ -42,7 +42,7 @@ public class Population {
                 speeds.add((float)(java.util.concurrent.ThreadLocalRandom.current().nextFloat()*Math.PI-(2*Math.PI)));
             creature.setJointSpeeds(speeds);
         }
-        bestEver = creatures.get(0);
+        bestEver = creatures.get(0).closestDistance;
 
         poppool = new int[(int)(.5*size*(size+1))];
         int processed = 0;
@@ -58,7 +58,7 @@ public class Population {
         return new Vec2(this.startx, this.starty);
     }
 
-    public Creature getBestEver() {
+    public float getBestEver() {
         return bestEver;
     }
 
@@ -84,6 +84,11 @@ public class Population {
     }
 
     public void nextGen() {
+        creatures.sort((x, y) -> (x.closestDistance > y.closestDistance) ? 1 : -1);
+        Creature best = creatures.get(0);
+
+        if (best.closestDistance < bestEver) // update bestEver if applicable
+            bestEver = best.closestDistance;
 
         ArrayList<Creature> newGen = new ArrayList<>();
         for (int c = 0; c < this.creatures.size(); c++) {
@@ -97,24 +102,32 @@ public class Population {
             c.kill();
         }
         this.creatures = newGen;
+        for (Creature c : creatures)
+            c.setGoal(goal.x, goal.y);
     }
 
-    public Creature reproduce() {
+    public float reproduce() {
         creatures.sort((x, y) -> (x.closestDistance > y.closestDistance) ? 1 : -1);
         Creature best = creatures.get(0);
 
-        if (best.closestDistance < bestEver.closestDistance) // update bestEver if applicable
-            bestEver = best;
+        if (best.closestDistance < bestEver) // update bestEver if applicable
+            bestEver = best.closestDistance;
 
+        ArrayList<Creature> newGen = new ArrayList<>();
         for (int i=0; i<size; i++) {
-            Creature father = creatures.get(i);
+            Creature father = creatures.get(choosePartner());
             Creature mother = creatures.get(choosePartner());
-            Creature child = new Creature(startx, starty, dims, brainsize, box2d);
+            Creature child = new Creature(startx+50, starty, dims, brainsize, box2d);
             child.brain = NeuralNetwork.mate(father.getBrain(), mother.getBrain(), crossoverProb, mutationRate, mutationFreq);
-            creatures.set(i, child);
+            newGen.add(child);
         }
-        return best;
+        for (Creature c : creatures)
+            c.kill();
+
+        creatures = newGen;
+        return bestEver;
     }
+
 
     public int choosePartner() {
         return size - 1 - poppool[(int)(Math.random()*poppool.length)];
