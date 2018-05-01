@@ -14,6 +14,7 @@ public class Master extends PApplet {
     double currSteps = 0;
     int generation = 1;
     boolean simulate = true;
+    Vec2 goal;
 
 
     public static void main(String[] args) {
@@ -35,11 +36,11 @@ public class Master extends PApplet {
                 box2d,
                 width / 15,
                 height - 30,
-                new float[]{30, 10, 30, 10, 30, 10 }, // dims
-                new int[]{10}, window.getGoal(), // goalposn
+                new float[]{30, 10, 30, 10, 30, 10, 30, 10 }, // dims
+                new int[]{20, 4}, window.getGoal(), // goalposn
                 40,
                 .1,
-                .2,
+                .3,
                 1);
         Vec2 goal = window.getGoal();
         for (Creature c : creatures.getCreatures())
@@ -47,6 +48,7 @@ public class Master extends PApplet {
 
         best = creatures.getCreatures().get(0);
         boundaries.addAll(window.getBoundaries());
+        this.goal = goal;
     }
 
 
@@ -56,18 +58,20 @@ public class Master extends PApplet {
         int ns = 10;
         for (int i = 0; i < ns; i++) {
             box2d.step();
-
+            creatures.update();
             currSteps++;
         }
         for (Boundary bound : boundaries)
             displayBoundary(bound);
+
+        fill(0);
+        ellipse(goal.x, goal.y, 15, 15);
 
         textSize(32);
         text("Generation "+generation, width/2, 30);
         textSize(24);
         text("Closest: "+creatures.getBestEver(), width/2, 60);
         fill(0, 102, 153);
-
 
         if (simulate) {
             if (currSteps > 2000) {
@@ -76,8 +80,6 @@ public class Master extends PApplet {
                 generation++;
                 currSteps = 0;
             }
-
-            creatures.update();
 
             displayAllCreatures();
         }

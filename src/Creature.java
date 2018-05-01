@@ -13,6 +13,7 @@ public class Creature {
     float goalx, goaly;
     float[] dims;
     float closestDistance;
+    float totalDistance;
 
 
     public Creature(float x, float y, float[] dims, int[] brainsize, Box2DProcessing box2d) {
@@ -60,6 +61,7 @@ public class Creature {
         for (int i=4; i<dims.length; i+=2)
             addBox(dims[i], dims[i+1]);
        this.brain = brain;
+
     }
 
     public Creature copy() {
@@ -69,13 +71,17 @@ public class Creature {
     public void setGoal(float x, float y) {
         goalx = x;
         goaly = y;
-        Vec2 currPosn = boxes.getFirst().getPixelPosn();
-        closestDistance = (float)Math.sqrt((currPosn.x)*(currPosn.x)+(currPosn.y)*(currPosn.y));
+        //Vec2 currPosn = boxes.getFirst().getPixelPosn();
+        Vec2 currPosn = box2d.getBodyPixelCoord(boxes.getFirst().getBody());
+        closestDistance = (float)Math.sqrt((currPosn.x-goalx)*(currPosn.x-goalx)+(currPosn.y-goaly)*(currPosn.y-goaly));
+        totalDistance = closestDistance;
     }
 
     public void update() {
-        Vec2 currPosn = boxes.getFirst().getPixelPosn();
-        closestDistance = Math.min((float)Math.sqrt((currPosn.x)*(currPosn.x)+(currPosn.y)*(currPosn.y)), closestDistance);
+        Vec2 currPosn = box2d.getBodyPixelCoord(boxes.getFirst().getBody());
+        closestDistance = Math.min((float)Math.sqrt((currPosn.x-goalx)*(currPosn.x-goalx)+(currPosn.y-goaly)*(currPosn.y-goaly)), closestDistance);
+        totalDistance += closestDistance;
+
         double[] outputs = brain.predict(nnInputs());
         LinkedList<Float> newSpeeds = new LinkedList<>();
         for (int i=0; i<joints.size(); i++)
