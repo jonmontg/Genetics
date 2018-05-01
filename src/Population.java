@@ -2,6 +2,7 @@ import org.jbox2d.common.Vec2;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.Random;
 
 public class Population {
     private Box2DProcessing box2d;
@@ -17,10 +18,13 @@ public class Population {
     private double crossoverProb;
     private Creature bestEver;
 
-    public Population(Box2DProcessing w, float startx, float starty, float[] dims, int[] brainsize, Vec2 goal, int size, double crossoverProb, double mutationRate, int mutationFreq) {
+    public Population(Box2DProcessing w, float startx, float starty, float[] dims, int[] brainsize, Vec2 goal, int size,
+                      double crossoverProb, double mutationRate, int mutationFreq) {
         this.box2d = w;
         this.size = size;
-        this.startx = startx;
+        Vec2 st = w.coordPixelsToWorld(startx, starty);
+        this.startx = st.x;
+        this.starty = st.y;
         this.starty = starty;
         this.dims = dims;
         this.brainsize = brainsize;
@@ -49,10 +53,50 @@ public class Population {
         }
     }
 
+
+    public Vec2 getStart() {
+        return new Vec2(this.startx, this.starty);
+    }
+
+    public Creature getBestEver() {
+        return bestEver;
+    }
+
     public void update() {
         for (Creature c : creatures) {
             c.update();
         }
+    }
+
+    private Creature tournamentSelect(int size) {
+        if (size > this.creatures.size()) {
+            return this.creatures.get(0).copy();
+        }
+        int best = -1;
+        for (int i = 0; i < size; i++) {
+            int rInd = new Random().nextInt(this.creatures.size());
+            if (best == -1 || this.creatures.get(rInd).closestDistance < this.creatures.get(best).closestDistance) {
+                best = rInd;
+            }
+        }
+        //System.out.println("best " + best);
+        return this.creatures.get(best).copy();
+    }
+
+    public void nextGen() {
+
+        ArrayList<Creature> newGen = new ArrayList<>();
+        for (int c = 0; c < this.creatures.size(); c++) {
+            newGen.add(tournamentSelect(30));
+        }
+        for (Creature c: newGen) {
+            c.brain.mutate(this.mutationRate, 1);
+        }
+
+        for (Creature c: this.creatures) {
+            c.kill();
+        }
+        this.creatures = newGen;
     }
 
     public Creature reproduce() {

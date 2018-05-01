@@ -29,7 +29,7 @@ public class Box {
         FixtureDef fd = new FixtureDef();
         fd.shape = ps;
         fd.density = 1f;
-        fd.friction = .3f;
+        fd.friction = .6f;
         fd.restitution = .5f;
         fd.filter.groupIndex = -1;
         body.createFixture(fd);

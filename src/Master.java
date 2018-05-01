@@ -35,11 +35,11 @@ public class Master extends PApplet {
                 box2d,
                 width / 15,
                 height - 30,
-                new float[]{30, 10, 30, 10, 30, 10, 30, 10}, // dims
+                new float[]{30, 10, 30, 10, 30, 10 }, // dims
                 new int[]{10}, window.getGoal(), // goalposn
-                20,
-                .2,
-                .5,
+                40,
+                .1,
+                .1,
                 1);
 
         best = creatures.getCreatures().get(0);
@@ -50,22 +50,29 @@ public class Master extends PApplet {
 
     public void draw() {
         background(255);
-        box2d.step();
+        int ns = 10;
+        for (int i = 0; i < ns; i++) {
+            box2d.step();
+
+            currSteps++;
+        }
         for (Boundary bound : boundaries)
             displayBoundary(bound);
 
         textSize(32);
-        text("Generation "+generation, width/2, height/2);
+        text("Generation "+generation, width/2, 30);
+        textSize(24);
+        text("Closest: "+creatures.getBestEver().closestDistance, width/2, 60);
         fill(0, 102, 153);
 
 
         if (simulate) {
             if (currSteps > 2000) {
-                best = creatures.reproduce();
+                creatures.nextGen();
+                System.out.println("Gen: "+ generation+" Best: "+creatures.getBestEver().closestDistance);
                 generation++;
                 currSteps = 0;
             }
-            currSteps++;
 
             creatures.update();
 

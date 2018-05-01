@@ -9,35 +9,19 @@ public class Creature {
     LinkedList<RevolvingConnection> joints;
     Box2DProcessing box2d;
     NeuralNetwork brain;
+    float startx, starty;
     float goalx, goaly;
+    float[] dims;
     float closestDistance;
 
 
-    public Creature(float x, float y, float width, float height, int numberOfSegments, int[] brainsize, Box2DProcessing box2d) {
-        this.box2d = box2d;
-        Box box1 = new Box(x-(width/2)-5, y, width, height, 0, box2d);
-        Box box2 = new Box(x+(width/2)-5, y, width, height, 0, box2d);
-        RevoluteJointDef jd = new RevoluteJointDef();
-        Vec2 posn = new Vec2(box1.getBody().getWorldCenter().x+box2d.scalarPixelsToWorld((width/2)),
-                box1.getBody().getWorldCenter().y);
-        jd.initialize(box1.getBody(), box2.getBody(), posn);
-        jd.maxMotorTorque = 500;
-        jd.enableMotor=true;
-
-        boxes = new LinkedList<>();
-        joints = new LinkedList<>();
-        joints.add(new RevolvingConnection((RevoluteJoint)box2d.world.createJoint(jd), box2d));
-        boxes.add(box1);
-        boxes.add(box2);
-        for (int i=2; i<numberOfSegments; i++)
-            addBox(width, height);
-        brain = new NeuralNetwork(2*joints.size(), brainsize, joints.size());
-    }
-
     public Creature(float x, float y, float[] dims, int[] brainsize, Box2DProcessing box2d) {
         this.box2d = box2d;
+        this.startx = x;
+        this.starty = y;
         float x1 = x - dims[0]/2+2;
         float x2 = x + dims[2]/2-2;
+        this.dims = dims;
         Box box1 = new Box(x1, y, dims[0], dims[1], 0, box2d);
         Box box2 = new Box(x2, y, dims[2], dims[3], 0, box2d);
         Vec2 posn = new Vec2(box1.getBody().getWorldCenter().x+box2d.scalarPixelsToWorld(dims[0]/2), box1.getBody().getWorldCenter().y);
@@ -53,6 +37,33 @@ public class Creature {
         for (int i=4; i<dims.length; i+=2)
             addBox(dims[i], dims[i+1]);
         brain = new NeuralNetwork(2*joints.size(), brainsize, joints.size());
+    }
+    public Creature(float x, float y, float[] dims, NeuralNetwork brain, Box2DProcessing box2d) {
+        this.box2d = box2d;
+        this.startx = x;
+        this.starty = y;
+        float x1 = x - dims[0]/2+2;
+        float x2 = x + dims[2]/2-2;
+        this.dims = dims;
+        Box box1 = new Box(x1, y, dims[0], dims[1], 0, box2d);
+        Box box2 = new Box(x2, y, dims[2], dims[3], 0, box2d);
+        Vec2 posn = new Vec2(box1.getBody().getWorldCenter().x+box2d.scalarPixelsToWorld(dims[0]/2), box1.getBody().getWorldCenter().y);
+        RevoluteJointDef jd = new RevoluteJointDef();
+        jd.initialize(box1.getBody(), box2.getBody(), posn);
+        jd.maxMotorTorque = 1000;
+        jd.enableMotor = true;
+        boxes = new LinkedList<>();
+        joints = new LinkedList<>();
+        joints.add(new RevolvingConnection((RevoluteJoint)box2d.world.createJoint(jd), box2d));
+        boxes.add(box1);
+        boxes.add(box2);
+        for (int i=4; i<dims.length; i+=2)
+            addBox(dims[i], dims[i+1]);
+       this.brain = brain;
+    }
+
+    public Creature copy() {
+        return new Creature(this.startx, this.starty, this.dims, this.brain.copy(), this.box2d);
     }
 
     public void setGoal(float x, float y) {
@@ -159,6 +170,15 @@ public class Creature {
         for (int i=0; i<joints.size(); i++)
             input[i+joints.size()] = joints.get(i).joint.getJointAngle();
         return input;
+    }
+
+    public void kill() {
+        for (Box b: this.boxes) {
+            this.box2d.destroyBody(b.getBody());
+        }
+        for (RevolvingConnection j: this.joints) {
+            this.box2d.world.destroyJoint(j.getJoint());
+        }
     }
 
     public NeuralNetwork getBrain() {
