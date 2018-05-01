@@ -86,17 +86,15 @@ public class NeuralNetwork {
     /**
      * Mutates the weights of the Neural Network
      * @param mr - mutation rate
-     * @param mf - mutation frequency
      */
-    public void mutate(double mr, int mf) {
+    public void mutate(double mr) {
         Random r = new Random();
-        for (int f = 0; f < mf; f++) {
-            for (int i = 0; i < this.network.length; i++) {
-                for (int j = 0; j < this.network[i].length; j++) {
-                    this.network[i][j].mutate(mr);
-                }
+        for (int i = 0; i < this.network.length; i++) {
+            for (int j = 0; j < this.network[i].length; j++) {
+                this.network[i][j].mutate(mr);
             }
         }
+
     }
 
     /**

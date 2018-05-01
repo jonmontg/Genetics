@@ -1,37 +1,27 @@
-
 import processing.core.PVector;
-
-import java.rmi.activation.ActivationGroup_Stub;
 import java.util.*;
 
-/**
- * A Population represents a group of Creatures with unique properties
- * such as mutation rate and brian size
- */
+
 public class Population {
 
     private Sketch p;
-    private ArrayList<Creature> creatures; // maps creatures to getFitness
-    private double mutationRate; //how large mutations are
-    private int mutationFrequency; // how often mutations occur
-    private double fitness;
+    private ArrayList<Creature> creatures;
+    private double mutationRate;
+    private int tournSize = 10;
 
     // size should be even (for now)
-    public Population(Sketch p, int size, double mr, int mf, int[] brainSize, PVector col) {
+    public Population(Sketch p, int size, double mr, int[] brainSize, PVector col) {
         this.p = p;
         this.creatures = new ArrayList<Creature>();
         this.mutationRate = mr;
-        this.mutationFrequency = mf;
-        this.fitness = 0;
         for (int i = 0; i < size; i++) {
-            this.creatures.add(new Creature(p, brainSize, col));
+            this.creatures.add(new Creature(this.p, this.mutationRate, brainSize, new PVector(this.p.width / 2, 50), col));
         }
     }
 
     public void update() {
         for (Creature c: this.creatures) {
             c.update();
-            this.p.s.updateFitness(c);
         }
     }
 
@@ -39,6 +29,10 @@ public class Population {
         for (Creature c: this.creatures) {
             c.draw();
         }
+    }
+
+    public ArrayList<Creature> getCreatures() {
+        return creatures;
     }
 
     private void sortCreatures() { // sorts in descending order
@@ -55,22 +49,6 @@ public class Population {
         });
     }
 
-    private Creature rouletteSelect(double[] probs) {
-        double probSum = 0;
-        for (double prob: probs) {
-            probSum += prob;
-        }
-        double r = new Random().nextDouble() * probSum;
-        for (int i = 0; i < probs.length; i++) {
-            r -= probs[i];
-            if (r < 0) {
-                //System.out.println("I: " + i);
-                return this.creatures.get(i).copy();
-            }
-        }
-        return this.creatures.get(0).copy();
-    }
-
     private Creature tournamentSelect(int size) {
         if (size > this.creatures.size()) {
             return this.creatures.get(0).copy();
@@ -82,26 +60,18 @@ public class Population {
                 best = rInd;
             }
         }
-        //System.out.println("best " + best);
         return this.creatures.get(best).copy();
-    }
-
-    public void setTarget(PVector target) {
-        for (Creature c: this.creatures) {
-            c.setTarget(target);
-        }
     }
 
     public void nextGen() {
         this.sortCreatures();
-        this.fitness = this.creatures.get(0).getFitness(); // temporarily using best getFitness
 
         ArrayList<Creature> newGen = new ArrayList<>();
         for (int c = 0; c < this.creatures.size(); c++) {
-            newGen.add(tournamentSelect(50));
+            newGen.add(tournamentSelect(this.tournSize));
         }
         for (Creature c: newGen) {
-            c.mutate(this.mutationRate, this.mutationFrequency);
+            c.mutate(this.mutationRate);
         }
         this.creatures = newGen;
     }

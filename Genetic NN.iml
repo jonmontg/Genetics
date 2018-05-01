@@ -9,5 +9,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="processing" level="project" />
+    <orderEntry type="library" exported="" name="jbox2d-library-2.2.1.1" level="project" />
+    <orderEntry type="library" exported="" name="controlP5" level="project" />
   </component>
 </module>
