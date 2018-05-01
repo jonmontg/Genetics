@@ -7,12 +7,16 @@ public class FlatWindow implements Window {
     private Box2DProcessing box2d;
     private LinkedList<Boundary> boundaries = new LinkedList<>();
     private Vec2 goal;
+    float width;
+    float height;
 
     public FlatWindow(float width, float height, Box2DProcessing box2d) {
         boundaries.add(new Boundary(0, height/2, 5, height, box2d));
         boundaries.add(new Boundary(width/2, height, width, 5, box2d));
         boundaries.add(new Boundary(width, height/2, 5, height, box2d));
         goal = new Vec2(width, height);
+        this.width = width;
+        this.height = height;
     }
     /**
      * Returns the list of Boundaries that make up this
@@ -24,4 +28,7 @@ public class FlatWindow implements Window {
 
     public Vec2 getGoal() {return goal;}
 
+    public Vec2 getStartPosn() {
+        return new Vec2(width/15, height-30);
+    }
 }

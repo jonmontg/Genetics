@@ -10,6 +10,7 @@ public class Master extends PApplet {
     private Population creatures;
     private LinkedList<Boundary> boundaries = new LinkedList<>();
 
+
     Creature best;
     double currSteps = 0;
     int generation = 1;
@@ -28,21 +29,22 @@ public class Master extends PApplet {
         box2d = new Box2DProcessing(this);
         box2d.createWorld();
 
-        //StaircaseWindow window = new StaircaseWindow(width, height, 15, box2d);
-        FlatWindow window = new FlatWindow(width, height, box2d);
+        //Window window = new StaircaseWindow(width, height, 35, box2d);
+        Window window = new FlatWindow(width, height, box2d);
 
+        Vec2 start = window.getStartPosn();
         creatures = new Population(
                 box2d,
-                width / 15,
-                height - 30,
-                new float[]{30, 10, 30, 10, 30, 10, 30, 10}, // dims
+                start.x,
+                start.y,
+                new float[]{20, 5, 20, 5, 20, 5}, // dims
                 new int[]{10}, window.getGoal(), // goalposn
                 20,
                 .2,
-                .5,
+                .2,
                 1);
 
-        best = creatures.getCreatures().get(0);
+        best = creatures.getBest();
         boundaries.addAll(window.getBoundaries());
     }
 
@@ -55,13 +57,14 @@ public class Master extends PApplet {
             displayBoundary(bound);
 
         textSize(32);
-        text("Generation "+generation, width/2, height/2);
+        text("Generation "+generation, (int)(1.2*width/3), 30);
         fill(0, 102, 153);
 
 
         if (simulate) {
             if (currSteps > 2000) {
-                best = creatures.reproduce();
+                creatures.reproduce();
+                best = creatures.getBest();
                 generation++;
                 currSteps = 0;
             }

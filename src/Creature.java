@@ -86,7 +86,7 @@ public class Creature {
         Vec2 posn = new Vec2(lastBox.getBody().getWorldCenter().x+box2d.scalarPixelsToWorld(lastBox.getWidth()/2),
                 lastBox.getBody().getWorldCenter().y);
         jd.initialize(lastBox.getBody(), newBox.getBody(), posn);
-        jd.maxMotorTorque = 500;
+        jd.maxMotorTorque = 700;
         jd.enableMotor=true;
         joints.add(new RevolvingConnection((RevoluteJoint)box2d.world.createJoint(jd), box2d));
         boxes.add(newBox);

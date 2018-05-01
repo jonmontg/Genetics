@@ -77,6 +77,10 @@ public class Population {
 
     }
 
+    public Creature getBest() {
+        return bestEver;
+    }
+
     public LinkedList<Creature> getCreatures() {
         return new LinkedList<>(creatures);
     }
