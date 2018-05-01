@@ -72,10 +72,6 @@ public class Creature {
         return this.fitness;
     }
 
-    public void setFitness(double f) {
-        this.fitness = f;
-    }
-
     public void mutate(double mr) {
         this.brain.mutate(mr);
     }

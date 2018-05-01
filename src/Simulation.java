@@ -43,12 +43,11 @@ public class Simulation {
 
     public void draw() {
         p.background(100);
-        p.fill(255, 255, 255);
-        p.ellipse((int)this.target.x, (int)this.target.y, 20, 20);
-
         for (Population p: this.populations) {
             p.draw();
         }
+        p.fill(255, 255, 255);
+        p.ellipse((int)this.target.x, (int)this.target.y, 20, 20);
     }
 
     public void setTarget(float x, float y) {
@@ -68,12 +67,24 @@ public class Simulation {
             this.speedMult = this.simFrames;
     }
 
+    public void scaleLength (double scale) {
+        this.simFrames = (int) (this.simFrames * scale);
+        if (this.simFrames < 100)
+            this.simFrames = 100;
+        else if (this.simFrames > 10000)
+            this.speedMult = 10000;
+    }
+
     public void keyPressed(char key) {
-        System.out.println(key);
+        //System.out.println(key);
         if (key == 'z') {
-            scaleTime(-1.2);
+            scaleTime(.8);
         } else if (key == 'c') {
             scaleTime(1.2);
+        } else if (key == 'a') {
+            scaleLength(.8);
+         }else if (key == 'd') {
+            scaleLength(1.2);
         } else if (key == 'x') {
             this.followMouse = !this.followMouse;
         }

@@ -7,11 +7,12 @@ public class Population {
     private Sketch p;
     private ArrayList<Creature> creatures;
     private double mutationRate;
-    private int tournSize = 10;
+    private int tournSize;
 
     // size should be even (for now)
     public Population(Sketch p, int size, double mr, int[] brainSize, PVector col) {
         this.p = p;
+        this.tournSize = (int) (size / 3);
         this.creatures = new ArrayList<Creature>();
         this.mutationRate = mr;
         for (int i = 0; i < size; i++) {

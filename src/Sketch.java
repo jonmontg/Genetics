@@ -11,24 +11,30 @@ public class Sketch extends PApplet {
     public Simulation s;
 
     public void settings() {
-        size(W, H);
+        //size(W, H);
+        fullScreen();
     }
 
     public void setup() {
+        noStroke();
 
-        Population[] creatures = new Population[8];
-        creatures[0] = new Population(this, 50, .1, new int[] {2}, new PVector(255, 0, 0));
-        creatures[1] = new Population(this, 50, .2, new int[] {2}, new PVector(200, 0, 0));
-        creatures[2] = new Population(this, 50, .3, new int[] {2}, new PVector(150, 0, 0));
-        creatures[3] = new Population(this, 50, .4, new int[] {2}, new PVector(100, 0, 0));
-        creatures[4] = new Population(this, 50, .1, new int[] {6, 6}, new PVector(0, 255, 0));
-        creatures[5] = new Population(this, 50, .2, new int[] {6, 6}, new PVector(0, 200, 0));
-        creatures[6] = new Population(this, 50, .3, new int[] {6, 6}, new PVector(0, 150, 0));
-        creatures[7] = new Population(this, 50, .4, new int[] {6, 6}, new PVector(0, 100, 0));
-
-
-
-
+        Population[] creatures = new Population[16];
+        creatures[0] = new Population(this, 50, .01, new int[] {2}, new PVector(255, 0, 0));
+        creatures[1] = new Population(this, 50, .1, new int[] {2}, new PVector(200, 0, 0));
+        creatures[2] = new Population(this, 50, 1, new int[] {2}, new PVector(150, 0, 0));
+        creatures[3] = new Population(this, 50, 10, new int[] {2}, new PVector(100, 0, 0));
+        creatures[4] = new Population(this, 50, .01, new int[] {6}, new PVector(0, 255, 0));
+        creatures[5] = new Population(this, 50, .1, new int[] {6}, new PVector(0, 200, 0));
+        creatures[6] = new Population(this, 50, 1, new int[] {6}, new PVector(0, 150, 0));
+        creatures[7] = new Population(this, 50, 10, new int[] {6}, new PVector(0, 100, 0));
+        creatures[8] = new Population(this, 50, .01, new int[] {6, 6}, new PVector(0, 0, 255));
+        creatures[9] = new Population(this, 50, .1, new int[] {6, 6}, new PVector(0, 0, 200));
+        creatures[10] = new Population(this, 50, 1, new int[] {6, 6}, new PVector(0, 0, 150));
+        creatures[11] = new Population(this, 50, 10, new int[] {6, 6}, new PVector(0, 0, 100));
+        creatures[12] = new Population(this, 50, .01, new int[] {6, 6, 6}, new PVector(255, 255, 0));
+        creatures[13] = new Population(this, 50, .1, new int[] {6, 6, 6}, new PVector(20, 200, 0));
+        creatures[14] = new Population(this, 50, 1, new int[] {6, 6, 6}, new PVector(150, 150, 0));
+        creatures[15] = new Population(this, 50, 10, new int[] {6, 6, 6}, new PVector(100, 100, 0));
 
         this.s = new Simulation(this, 500, creatures);
     }
