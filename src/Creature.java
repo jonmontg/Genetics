@@ -1,12 +1,10 @@
-import org.jbox2d.dynamics.World;
 import processing.core.*;
 
-import java.util.ArrayList;
 
-public class Creature {
+class Creature {
 
     // temp vars
-    private static final int nInputs = 8;
+    private static final int nInputs = 4;
     private static final int nOutputs = 2; //xa, ya
 
     private Sketch p;
@@ -16,14 +14,13 @@ public class Creature {
     private PVector acc;
     private PVector vel;
     private PVector pos;
-    private float maxVel = 4;
 
     private PVector color;
     private NeuralNetwork brain;
     private double mutationRate;
     private double fitness;
 
-    public Creature(Sketch p, double mr, int[] brainSize, PVector target, PVector col) {
+    Creature(Sketch p, double mr, int[] brainSize, PVector target, PVector col) {
         this.p = p;
         this.mutationRate = mr;
         this.target = target;
@@ -34,7 +31,7 @@ public class Creature {
         this.brain = new NeuralNetwork(nInputs, brainSize, nOutputs);
     }
 
-    public Creature (Sketch p, double mr, NeuralNetwork brain, PVector target, PVector col) {
+    private Creature (Sketch p, double mr, NeuralNetwork brain, PVector target, PVector col) {
         this.p = p;
         this.mutationRate = mr;
         this.target = target;
@@ -45,43 +42,49 @@ public class Creature {
         this.brain = brain;
     }
 
-    public void setTarget(float x, float y) {
+    void setTarget(float x, float y) {
         this.target = new PVector(x, y);
     }
 
-    public void update() {
+    void update() {
             double[] outputs = brain.predict(nnInputs());
-            float aScale = 1;
+            float aScale = .1f;
             this.acc = new PVector((float)outputs[0] * aScale, (float)outputs[1] * aScale);
 
             this.vel.add(this.acc);
-            this.vel.limit(this.maxVel);
+            float maxVel = 2;
+            this.vel.limit(maxVel);
             this.pos.add(this.vel);
 
-            this.fitness += PVector.dist(this.pos, this.target);
+            this.fitness += 0;//PVector.dist(this.pos, this.target);
+            this.fitness += this.vel.mag() * 100;
     }
 
-    public void draw() {
+    void draw() {
         this.p.fill(this.color.x, this.color.y, this.color.z);
         this.p.ellipse((int)this.pos.x, (int)this.pos.y, 10, 10);
     }
 
     // Currently minimizing getFitness function
-    public double getFitness() {
+    double getFitness() {
         //System.out.println(this.fit);
         return this.fitness;
     }
 
-    public void mutate(double mr) {
+    void mutate(double mr) {
         this.brain.mutate(mr);
     }
 
     private double[] nnInputs() {
-        return new double[] {this.acc.x, this.acc.y, this.vel.x, this.vel.y,
-                            this.pos.x, this.pos.y, target.x, target.y};
+        return new double[] {this.pos.x, this.pos.y, this.vel.x, this.vel.y, this.target.x, this.target.y};
     }
 
-    public Creature copy() {
+    Creature copy() {
         return new Creature(this.p, this.mutationRate, this.brain.copy(), this.target, this.color);
+    }
+
+    void print() {
+        System.out.println("F: " + this.fitness);
+        this.brain.print();
     }
 }

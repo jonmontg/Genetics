@@ -2,37 +2,35 @@ import processing.core.PVector;
 import java.util.*;
 
 
-public class Population {
+class Population {
 
-    private Sketch p;
     private ArrayList<Creature> creatures;
     private double mutationRate;
     private int tournSize;
 
     // size should be even (for now)
-    public Population(Sketch p, int size, double mr, int[] brainSize, PVector col) {
-        this.p = p;
-        this.tournSize = (int) (size / 3);
-        this.creatures = new ArrayList<Creature>();
+    Population(Sketch p, int size, double mr, int[] brainSize, PVector col) {
+        this.tournSize = size / 3;
+        this.creatures = new ArrayList<>();
         this.mutationRate = mr;
         for (int i = 0; i < size; i++) {
-            this.creatures.add(new Creature(this.p, this.mutationRate, brainSize, new PVector(this.p.width / 2, 50), col));
+            this.creatures.add(new Creature(p, this.mutationRate, brainSize, new PVector(p.width / 2, 50), col));
         }
     }
 
-    public void update() {
+    void update() {
         for (Creature c: this.creatures) {
             c.update();
         }
     }
 
-    public void draw() {
+    void draw() {
         for (Creature c: this.creatures) {
             c.draw();
         }
     }
 
-    public ArrayList<Creature> getCreatures() {
+    ArrayList<Creature> getCreatures() {
         return creatures;
     }
 
@@ -64,7 +62,7 @@ public class Population {
         return this.creatures.get(best).copy();
     }
 
-    public void nextGen() {
+    void nextGen() {
         this.sortCreatures();
 
         ArrayList<Creature> newGen = new ArrayList<>();

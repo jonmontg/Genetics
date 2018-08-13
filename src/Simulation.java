@@ -2,7 +2,7 @@ import processing.core.*;
 
 import java.util.Random;
 
-public class Simulation {
+class Simulation {
 
     private Sketch p;
 
@@ -13,14 +13,15 @@ public class Simulation {
     private PVector target;
     private boolean followMouse = false;
 
-    public Simulation(Sketch p, int length, Population[] creatures) {
+    Simulation(Sketch p, int length, Population[] creatures) {
         this.p = p;
         this.target = new PVector(this.p.width / 2, 50);
         this.simFrames = length;
         this.populations = creatures;
     }
 
-    public void update() {
+    void update() {
+
         if (this.followMouse) {
             setTarget(this.p.mouseX, this.p.mouseY);
         }
@@ -37,20 +38,21 @@ public class Simulation {
                 if (!this.followMouse) {
                     setTarget(new Random().nextInt(this.p.width), new Random().nextInt(this.p.height));
                 }
+                this.populations[0].getCreatures().get(0).print();
             }
         }
     }
 
-    public void draw() {
-        p.background(100);
+    void draw() {
+        p.background(200);
         for (Population p: this.populations) {
             p.draw();
         }
-        p.fill(255, 255, 255);
+        p.fill(255);
         p.ellipse((int)this.target.x, (int)this.target.y, 20, 20);
     }
 
-    public void setTarget(float x, float y) {
+    void setTarget(float x, float y) {
         this.target = new PVector(x, y);
         for (Population p: this.populations) {
             for (Creature c: p.getCreatures()) {
@@ -59,23 +61,25 @@ public class Simulation {
         }
     }
 
-    public void scaleTime (double scale) {
+    private void scaleTime (double scale) {
         this.speedMult = this.speedMult * scale;
         if (this.speedMult < 1)
             this.speedMult = 1;
         else if (this.speedMult > this.simFrames)
             this.speedMult = this.simFrames;
+        else if (this.speedMult > 10000)
+            this.speedMult = 10000;
     }
 
-    public void scaleLength (double scale) {
+    private void scaleLength (double scale) {
         this.simFrames = (int) (this.simFrames * scale);
         if (this.simFrames < 100)
             this.simFrames = 100;
         else if (this.simFrames > 10000)
-            this.speedMult = 10000;
+            this.simFrames = 10000;
     }
 
-    public void keyPressed(char key) {
+    void keyPressed(char key) {
         //System.out.println(key);
         if (key == 'z') {
             scaleTime(.8);

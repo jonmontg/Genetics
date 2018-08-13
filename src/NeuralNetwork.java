@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class NeuralNetwork {
+class NeuralNetwork {
 
     private int nInputs;
     private int[] nLayers;
@@ -13,7 +13,7 @@ public class NeuralNetwork {
      * @param nl - array of hidden layer sizes
      * @param no = number of outputs
      */
-    public NeuralNetwork(int ni, int[] nl, int no) {
+    NeuralNetwork(int ni, int[] nl, int no) {
         this.nInputs = ni;
         this.nLayers = nl;
         this.nOutputs = no;
@@ -40,7 +40,7 @@ public class NeuralNetwork {
      * @param no - number of outputs
      * @param network - network of Neurons
      */
-    public NeuralNetwork(int ni, int[] nl, int no, Neuron[][] network) {
+    private NeuralNetwork(int ni, int[] nl, int no, Neuron[][] network) {
         this.nInputs = ni;
         this.nLayers = nl;
         this.nOutputs = no;
@@ -52,7 +52,7 @@ public class NeuralNetwork {
      * @param inputs - double array of input values
      * @return - network output predictions
      */
-    public double[] predict(double[] inputs) {
+    double[] predict(double[] inputs) {
         double[] vals = inputs;
         for (int i = 0; i < this.network.length; i++) {
             vals = feedForward(vals, i);
@@ -74,10 +74,10 @@ public class NeuralNetwork {
         return out;
     }
 
-    public void print() {
-        for (int i = 0; i < this.network.length; i++) {
-            for (int j = 0; j < this.network[i].length; j++) {
-                this.network[i][j].print();
+    void print() {
+        for (Neuron[] layer : this.network) {
+            for (Neuron n : layer) {
+                n.print();
             }
             System.out.println("===");
         }
@@ -87,11 +87,10 @@ public class NeuralNetwork {
      * Mutates the weights of the Neural Network
      * @param mr - mutation rate
      */
-    public void mutate(double mr) {
-        Random r = new Random();
-        for (int i = 0; i < this.network.length; i++) {
-            for (int j = 0; j < this.network[i].length; j++) {
-                this.network[i][j].mutate(mr);
+    void mutate(double mr) {
+        for (Neuron[] layer : this.network) {
+            for (Neuron n : layer) {
+                n.mutate(mr);
             }
         }
 
@@ -101,7 +100,7 @@ public class NeuralNetwork {
      * Copys a Neural Network
      * @return - an exact copy of the Neural Network
      */
-    public NeuralNetwork copy() {
+    NeuralNetwork copy() {
 
         Neuron[][] newNetwork = new Neuron[this.network.length][];
         for (int i = 0; i < this.network.length; i++) {
@@ -142,10 +141,10 @@ public class NeuralNetwork {
             this.bias = bias;
         }
 
-        public void print() {
+        void print() {
             System.out.println(this.bias);
-            for (int i = 0; i < this.weights.length; i++) {
-                System.out.println(this.weights[i]);
+            for (double weight : this.weights) {
+                System.out.println(weight);
             }
             System.out.println();
         }
@@ -155,7 +154,7 @@ public class NeuralNetwork {
          * @param inputs - double array of inputs to Neuron
          * @return - value between -1 and 1
          */
-        public double fire(double[] inputs) {
+        double fire(double[] inputs) {
             if (this.weights.length != inputs.length) {
                 return 0;
             }
@@ -171,18 +170,19 @@ public class NeuralNetwork {
          * Mutates a single rangle weight (including bias) in the Neuron
          * @param rate - how much weight should change
          */
-        public void mutate(double rate) {
+        void mutate(double rate) {
             Random r = new Random();
             for (int i = 0; i < this.weights.length + 1; i++) {
                 if (i < this.weights.length) {
                     this.weights[i] += r.nextGaussian() * rate;
+                    this.weights[i] = Math.min(Math.max(-1,this.weights[i]), 1);
                 } else {
-                    this.bias += r.nextGaussian();
+                    this.bias += r.nextGaussian() * rate;
                 }
             }
         }
 
-        public Neuron copy() {
+        Neuron copy() {
             return new Neuron(this.weights, this.bias);
         }
     }
