@@ -36,7 +36,7 @@ class Population {
 
     private void sortCreatures() { // sorts in descending order
         this.creatures.sort((c1, c2) -> {
-            if (Math.abs(c1.getFitness() - c2.getFitness()) < .00001)
+            if (Math.abs(c1.getFitness() - c2.getFitness()) < .0001)
                 return 0;
             if (c1.getFitness() < c2.getFitness())
                 return -1;
@@ -62,11 +62,19 @@ class Population {
         return this.creatures.get(best).copy();
     }
 
+    double avgFitness() {
+        double avg = 0;
+        for (Creature c: this.creatures) {
+            avg += c.getFitness();
+        }
+        return avg / this.creatures.size();
+    }
+
     void nextGen() {
         this.sortCreatures();
 
         ArrayList<Creature> newGen = new ArrayList<>();
-        for (int c = 0; c < this.creatures.size(); c++) {
+        for (int i = 0; i < this.creatures.size(); i++) {
             newGen.add(tournamentSelect(this.tournSize));
         }
         for (Creature c: newGen) {
