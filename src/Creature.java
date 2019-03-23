@@ -12,7 +12,6 @@ public class Creature {
     float goalx, goaly;
     float closestDistance;
 
-
     public Creature(float x, float y, float width, float height, int numberOfSegments, int[] brainsize, Box2DProcessing box2d) {
         this.box2d = box2d;
         Box box1 = new Box(x-(width/2)-5, y, width, height, 0, box2d);
@@ -55,6 +54,11 @@ public class Creature {
         brain = new NeuralNetwork(2*joints.size(), brainsize, joints.size());
     }
 
+    /**
+     * Sets the creature's goal for fitness evaluation
+     * @param x
+     * @param y
+     */
     public void setGoal(float x, float y) {
         goalx = x;
         goaly = y;
@@ -62,6 +66,9 @@ public class Creature {
         closestDistance = (float)Math.sqrt((currPosn.x)*(currPosn.x)+(currPosn.y)*(currPosn.y));
     }
 
+    /**
+     * Updates the creature's position and sets new segment speeds according to brain state
+     */
     public void update() {
         Vec2 currPosn = boxes.getFirst().getPixelPosn();
         closestDistance = Math.min((float)Math.sqrt((currPosn.x)*(currPosn.x)+(currPosn.y)*(currPosn.y)), closestDistance);

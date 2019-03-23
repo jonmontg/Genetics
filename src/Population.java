@@ -17,7 +17,21 @@ public class Population {
     private double crossoverProb;
     private Creature bestEver;
 
-    public Population(Box2DProcessing w, float startx, float starty, float[] dims, int[] brainsize, Vec2 goal, int size, double crossoverProb, double mutationRate, int mutationFreq) {
+    /**
+     * Initializes a population of creatures for the genetic algorithm
+     * @param w The Box2D world the creatures exist in
+     * @param startx Creature starting x position
+     * @param starty Creature starting y position
+     * @param dims Array of creature dimensions
+     * @param brainsize Array of neural network dimension sizes
+     * @param goal Creature goal location. Used for fitness evaluation
+     * @param size Number of creatures in the population
+     * @param crossoverProb Probability of genetic crossover in reproduction
+     * @param mutationRate Coefficient of the gaussian mutation
+     * @param mutationFreq Number of mutations on the child after reproduction
+     */
+    public Population(Box2DProcessing w, float startx, float starty, float[] dims,
+                      int[] brainsize, Vec2 goal, int size, double crossoverProb, double mutationRate, int mutationFreq) {
         this.box2d = w;
         this.size = size;
         this.startx = startx;
@@ -49,12 +63,20 @@ public class Population {
         }
     }
 
+    /**
+     * Updates all creatures in the population
+     */
     public void update() {
         for (Creature c : creatures) {
             c.update();
         }
     }
 
+    /**
+     * Replaces previous generation with new generation. Each creature is assigned a reproduction probability
+     * based on its fitness evaluation.
+     * @return Creature - The creature with the highest fitness
+     */
     public Creature reproduce() {
         creatures.sort((x, y) -> (x.closestDistance > y.closestDistance) ? 1 : -1);
         Creature best = creatures.get(0);
@@ -72,39 +94,28 @@ public class Population {
         return best;
     }
 
+    /**
+     * Chooses a member of the population for reproduction
+     * @return int - the population index of the creature
+     */
     public int choosePartner() {
         return size - 1 - poppool[(int)(Math.random()*poppool.length)];
 
     }
 
+    /**
+     * Returns the Creature with the highest historical fitness
+     * @return Creature
+     */
     public Creature getBest() {
         return bestEver;
     }
 
+    /**
+     * Returns the population as a LinkedList of creatures
+     * @return LinkedList
+     */
     public LinkedList<Creature> getCreatures() {
         return new LinkedList<>(creatures);
-    }
-
-    public static void main(String[] args) {
-        int[] freqs = new int[10];
-        int[] poppool = new int[(int)(.5*10*(10+1))];
-        int processed = 0;
-        for (int i=0; i<10; i++) {
-            for (int j=0; j<=i; j++)
-                poppool[processed+j] = i;
-            processed+=i+1;
-        }
-
-        for (int i=0; i<100; i++) {
-            freqs[9-poppool[(int)(Math.random()*poppool.length)]]++;
-        }
-
-        for (int i=0; i<freqs.length; i++)
-            System.out.println(((float)freqs[i]/100));
-        double sum = 0;
-        for (int i=0; i<10; i++) {
-            sum += (double)freqs[i]/100;
-        }
-        System.out.println(sum);
     }
 }
